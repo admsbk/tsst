@@ -1,0 +1,5 @@
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache

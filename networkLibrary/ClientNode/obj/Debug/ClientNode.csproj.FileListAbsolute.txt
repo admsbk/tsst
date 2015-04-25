@@ -1,0 +1,15 @@
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\MainWindow.baml
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\MainWindow.g.cs
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\App.g.cs
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.g.resources
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\bin\Debug\ClientNode.exe.config
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\bin\Debug\ClientNode.exe
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\bin\Debug\ClientNode.pdb
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\bin\Debug\networkLibrary.dll
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\bin\Debug\networkLibrary.pdb
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.exe
+c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\ClientNode\obj\Debug\ClientNode.pdb

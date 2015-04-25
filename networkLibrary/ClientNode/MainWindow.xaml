@@ -1,0 +1,9 @@
+﻿<Window x:Class="ClientNode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Connect to Cloud" HorizontalAlignment="Left" Height="30" Margin="10,31,0,0" VerticalAlignment="Top" Width="155" Click="Button_Click"/>
+
+    </Grid>
+</Window>
