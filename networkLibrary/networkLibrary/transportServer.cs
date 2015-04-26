@@ -48,9 +48,8 @@ namespace networkLibrary
                     TcpClient clientSocket = this.serverSocket.AcceptTcpClient();
                     ClientArgs args = new ClientArgs();
 
-                    args.message = networkLibrary.Constants.NEW_CLIENT_LOG;
-                    args.dstPort = "3333";
-                    args.Client = clientSocket;
+                    args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
+                    args.ID = clientSocket;
 
                     this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
@@ -172,25 +171,12 @@ namespace networkLibrary
         {
             if (serverSocket != null)
             {
-                stream = null;
-                //TcpClient client = null;
-                //List<TcpClient> clientsList = clientSockets.Keys.ToList();
-                /*Console.Write(clientsList.Count);
-                for (int i = 0; i < clientsList.Count; i++)
-                {
-                    if (clientSockets[clientsList[i]].Equals(name))
-                    {
-                        client = clientsList[i];
-                        break;
-                    }
-                }*/
-                
+                stream = null;                
                 if (client != null)
                 {
                     
                     if (client.Connected)
                     {
-                        Console.WriteLine("client connected");
                         stream = client.GetStream();
                         byte[] buffer = encoder.GetBytes(msg);
                         stream.Write(buffer, 0, buffer.Length);

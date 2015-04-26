@@ -30,7 +30,8 @@ namespace Cloud
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try{
-                cloud = new NetworkCloud(this.links, this.logList);
+                cloud = new NetworkCloud(this.links, this.nodes, this.logList);
+                this.StartButton.IsEnabled = false;
             }
             catch{
                 Console.WriteLine("unable to start cloud");
@@ -41,7 +42,7 @@ namespace Cloud
         {
             try
             {
-                
+                this.StartButton.IsEnabled = true;
                 cloud.stopServer();
             }
             catch

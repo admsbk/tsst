@@ -9,47 +9,21 @@ namespace networkLibrary
 {
     public class ClientArgs : EventArgs
     {
-        private string SrcPort;
-        private string Message;
-        private string Source;
-        private string DstPort;
-        private TcpClient client;
+      
 
-        public ClientArgs()
+        public string NodeName
         {
-
+            get;
+            set;
         }
 
-        public string srcPort
+        public TcpClient ID
         {
-            get { return SrcPort; }
-            set { SrcPort = value; }
+            get;
+            set;
         }
 
-        public string dstPort
-        {
-            get { return DstPort; }
-            set { DstPort = value; }
-        }
-
-        public string source
-        {
-            get { return Source; }
-            set { Source = value; }
-        }
-
-        public string message
-        {
-            get {    return Message;      }
-            set { Message = value; }
-
-        }
-
-        public TcpClient Client
-        {
-            get { return client; }
-            set { client = value; }
-        }
+        public string NodeID { get; set; }
         
     }
 }

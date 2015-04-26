@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Net.Sockets;
+using System.Windows;
 
 namespace Cloud
 {
@@ -15,13 +16,14 @@ namespace Cloud
     {
         transportServer server;
         private ListView links;
+        private ListView nodes;
         private TextBox logs;
         private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
         private List<TcpClient> sockests;
         transportServer.NewClientHandler reqListener;
         transportServer.NewMsgHandler msgListener;
 
-        public NetworkCloud(ListView links, TextBox logs)
+        public NetworkCloud(ListView links, ListView nodes, TextBox logs)
         {
             int port = 3333;
 
@@ -41,15 +43,22 @@ namespace Cloud
             server.OnNewMessageRecived += msgListener;
             this.links = links;
             this.logs = logs;
+            this.nodes = nodes;
             
         }
 
         private void newClientRequest(object a, ClientArgs e)
         {
 
-            addLog(e.message);
-            sockests.Add(e.Client);
-            server.sendMessage(e.Client, "Client"+sockests.IndexOf(e.Client));
+            addLog(e.NodeName);
+            sockests.Add(e.ID);
+            e.NodeID = "Client:" + sockests.IndexOf(e.ID);
+            Application.Current.Dispatcher.Invoke((Action)(() =>
+                {
+                    this.nodes.Items.Add(e);
+                    
+                }));
+            server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));
         }
 
         private void newMessageRecived(object a, MessageArgs e)
@@ -67,9 +76,11 @@ namespace Cloud
         {
             this.logs.Dispatcher.Invoke(
                     System.Windows.Threading.DispatcherPriority.Normal,
-                    new Action(() => { logs.Text += (message + Environment.NewLine); })
+                    new Action(() => { logs.Text += ("["+DateTime.Now.ToString("HH:mm:ss")+"]"+Environment.NewLine+
+                        message + Environment.NewLine + Environment.NewLine); })
                     );
         }
+
 
     }
 }

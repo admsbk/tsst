@@ -8,3 +8,8 @@ C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLi
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
+D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
+D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
