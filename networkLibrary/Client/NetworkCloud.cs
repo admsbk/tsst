@@ -7,6 +7,7 @@ using networkLibrary;
 using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Net.Sockets;
 
 namespace Cloud
 {
@@ -15,13 +16,25 @@ namespace Cloud
         transportServer server;
         private ListView links;
         private TextBox logs;
+        private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
+        private List<TcpClient> sockests;
         transportServer.NewClientHandler reqListener;
         transportServer.NewMsgHandler msgListener;
 
         public NetworkCloud(ListView links, TextBox logs)
         {
             int port = 3333;
-            server = new transportServer(port);
+
+            try
+            {
+                server = new transportServer(port);
+
+            }
+            catch
+            {
+
+            }
+            sockests = new List<TcpClient>();
             reqListener = new transportServer.NewClientHandler(newClientRequest);
             msgListener = new transportServer.NewMsgHandler(newMessageRecived);
             server.OnNewClientRequest += reqListener;
@@ -33,28 +46,29 @@ namespace Cloud
 
         private void newClientRequest(object a, ClientArgs e)
         {
-            //logs.Text+=("polaczony nowy client\n");
-            logs.Text += "polaczony nowy client" + Environment.NewLine;
-           
-            //this.logListView.Items.Add(e);
-            //Console.WriteLine(e.message);
+
+            addLog(e.message);
+            sockests.Add(e.Client);
+            server.sendMessage(e.Client, "Client"+sockests.IndexOf(e.Client));
         }
 
         private void newMessageRecived(object a, MessageArgs e)
         {
-           this.logs.Dispatcher.Invoke(
-                    System.Windows.Threading.DispatcherPriority.Normal,
-                    new Action(() => { logs.Text += (e.Message + Environment.NewLine); })
-                    );
-
-                //logs.Text += "polaczony nowy client" + Environment.NewLine;
-            Console.WriteLine(e.Message);
+            addLog(e.Message);
         }
 
         public void stopServer(){
             server.OnNewClientRequest -= reqListener;
             server.OnNewMessageRecived -= msgListener;
             server.stopServer();
+        }
+
+        private void addLog(string message)
+        {
+            this.logs.Dispatcher.Invoke(
+                    System.Windows.Threading.DispatcherPriority.Normal,
+                    new Action(() => { logs.Text += (message + Environment.NewLine); })
+                    );
         }
 
     }

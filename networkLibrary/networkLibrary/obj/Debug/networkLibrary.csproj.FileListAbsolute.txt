@@ -3,3 +3,8 @@ c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibra
 c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
 c:\users\malec\documents\visual studio 2013\Projects\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb

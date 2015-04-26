@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientArgs.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="EndPoint.cs" />
     <Compile Include="MessageArgs.cs" />
     <Compile Include="transportClient.cs" />

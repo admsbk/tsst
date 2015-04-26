@@ -15,17 +15,18 @@ namespace networkLibrary
         protected NetworkStream stream;
         private TcpListener serverSocket;
         private Thread serverThread;
-        private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
+        //private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
+        private List<TcpClient> clientSocket;
 
         public transportServer(int port)
         {
             this.encoder = new ASCIIEncoding();
+            this.clientSocket = new List<TcpClient>();
             if (serverSocket == null && serverThread == null)
             {      
                     this.serverSocket = new TcpListener(IPAddress.Any, port);
                     this.serverThread = new Thread(new ThreadStart(ListenForClients));
                     this.serverThread.Start();
-                    Console.WriteLine("Serwer start OK");
                     //logs.addLog(Constants.CLOUD_STARTED_CORRECTLY, true, Constants.LOG_INFO, true);        
             }
             else
@@ -44,10 +45,16 @@ namespace networkLibrary
          
                 try
                 {
-                    Console.WriteLine("server thread");
                     TcpClient clientSocket = this.serverSocket.AcceptTcpClient();
-                    
-                    clientSockets.Add(clientSocket, "Unknown");
+                    ClientArgs args = new ClientArgs();
+
+                    args.message = networkLibrary.Constants.NEW_CLIENT_LOG;
+                    args.dstPort = "3333";
+                    args.Client = clientSocket;
+
+                    this.clientSocket.Add(clientSocket);
+                    OnNewClientRequest(this, args);
+
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));
                     clientThread.Start(clientSocket);
                     
@@ -88,20 +95,10 @@ namespace networkLibrary
                 }
 
                 string signal = encoder.GetString(message, 0, bytesRead);
-                if (clientSockets[clientSocket].Equals("unknown"))
-                {
-                    //updateClientName(clientSocket, signal); //clients as first message send his id
-                    ClientArgs args = new ClientArgs();
-                    args.message = "nowy klient";
-                    args.dstPort = "3333";
-                    OnNewClientRequest(this, args);
-                    
-                }
-                else
-                {
-                    MessageArgs myArgs = new MessageArgs(signal);
-                    OnNewMessageRecived(this, myArgs);
-                }
+                
+                MessageArgs myArgs = new MessageArgs(signal);
+                OnNewMessageRecived(this, myArgs);
+               
             }
             if (serverSocket != null)
             {
@@ -109,7 +106,7 @@ namespace networkLibrary
                 {
                     clientSocket.GetStream().Close();
                     clientSocket.Close();
-                    clientSockets.Remove(clientSocket);
+                    //clientSockets.Remove(clientSocket);
                 }
                 catch
                 {
@@ -131,7 +128,7 @@ namespace networkLibrary
             if (msg.Contains("//NAME// "))
             {
                 string[] tmp = msg.Split(' ');
-                clientSockets[client] = tmp[1];
+                //clientSockets[client] = tmp[1];
                 return true;
             }
             else
@@ -143,13 +140,13 @@ namespace networkLibrary
         public void stopServer()
         {
             //Console.WriteLine(clientSockets.Keys.ToList()[0].Connected);
-            foreach (TcpClient clientSocket in clientSockets.Keys.ToList())
+            foreach (TcpClient client in clientSocket)
             {
                 try
                 {
-                    clientSocket.GetStream().Close();
-                    clientSocket.Close();
-                    clientSockets.Remove(clientSocket);
+                    client.GetStream().Close();
+                    client.Close();
+                    clientSocket.Remove(client);
                 }
                 catch
                 {
@@ -171,14 +168,14 @@ namespace networkLibrary
             serverThread = null;
         }
 
-        public void sendMessage(string name, string msg)
+        public void sendMessage(TcpClient client, string msg)
         {
             if (serverSocket != null)
             {
                 stream = null;
-                TcpClient client = null;
-                List<TcpClient> clientsList = clientSockets.Keys.ToList();
-                Console.Write(clientsList.Count);
+                //TcpClient client = null;
+                //List<TcpClient> clientsList = clientSockets.Keys.ToList();
+                /*Console.Write(clientsList.Count);
                 for (int i = 0; i < clientsList.Count; i++)
                 {
                     if (clientSockets[clientsList[i]].Equals(name))
@@ -186,12 +183,14 @@ namespace networkLibrary
                         client = clientsList[i];
                         break;
                     }
-                }
-                /*
+                }*/
+                
                 if (client != null)
                 {
+                    
                     if (client.Connected)
                     {
+                        Console.WriteLine("client connected");
                         stream = client.GetStream();
                         byte[] buffer = encoder.GetBytes(msg);
                         stream.Write(buffer, 0, buffer.Length);
@@ -200,9 +199,10 @@ namespace networkLibrary
                     else
                     {
                         stream.Close();
-                        clientSockets.Remove(client);
+                        clientSocket.Remove(client);
+                        throw new Exception("Null Socket Exception");
                     }
-                }*/
+                }
             }
         }
     }
