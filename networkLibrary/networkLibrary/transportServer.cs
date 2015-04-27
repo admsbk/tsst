@@ -136,9 +136,22 @@ namespace networkLibrary
             }
         }
 
+        public bool isStarted()
+        {
+            if (serverSocket != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public void stopServer()
         {
-            //Console.WriteLine(clientSockets.Keys.ToList()[0].Connected);
+
             foreach (TcpClient client in clientSocket)
             {
                 try

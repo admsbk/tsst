@@ -81,6 +81,9 @@ namespace Cloud
                     );
         }
 
-
+        public bool isStarted()
+        {
+            return server.isStarted();
+        }
     }
 }
