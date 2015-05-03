@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Node Id="Node1" CloudHost="localhost" CloudPort="3333" ManagerHost="localhost" ManagerPort="4444">
+  <Ports>
+    <InputPorts>
+      <Port Id="IP0" />
+	  <Port Id="IP1" />
+      <Port Id="IP2" />
+    </InputPorts>
+    <OutputPorts>
+      <Port Id="OP0" />
+	  <Port Id="OP1" />
+      <Port Id="OP2" />
+    </OutputPorts>
+  </Ports>
+</Node>

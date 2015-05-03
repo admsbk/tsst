@@ -43,3 +43,6 @@ D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\Clien
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
+C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
