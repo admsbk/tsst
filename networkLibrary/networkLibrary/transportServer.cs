@@ -56,7 +56,6 @@ namespace networkLibrary
 
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));
                     clientThread.Start(clientSocket);
-                    
                 }
                 catch(Exception e)
                 {

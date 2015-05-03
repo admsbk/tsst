@@ -19,7 +19,7 @@ namespace ClientNode
         {
             try
             {
-                client = new transportClient("localhost", "3333");
+                client = new transportClient("localhost", "3334");
                 client.OnNewMessageRecived += new transportClient.NewMsgHandler(newMessageRecived);
                 this.chat = chat;
                 rIndex = Grid.GetRow(chat);
