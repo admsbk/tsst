@@ -14,46 +14,43 @@ namespace NetworkNode
     class Node
     {
         private Grid logs;
+        private Config conf;
         private int messageNumber = 0;
         private int rIndex;
         private transportClient cloud;
 
+        
         string ManagerIP { get; set; }
         string ManagerPort { get; set; }
         string CloudIP { get; set; }
         string CloudPort { get; set; }
         string NodeId { get; set; }
-
-
+        public List<string> portsIn { get; set; }
+        public List<string> portsOut { get; set; }
 
         public Node(Grid logs)
         {
             this.logs = logs;
             rIndex = Grid.GetRow(logs);
-           
-
         }
-
         private void newMessageRecived(object myObject, MessageArgs myArgs)
         {
+            //tutaj coś by trzeba wykminić
             addLog(logs, "Yout are: "+myArgs.Message, Constants.LOG_INFO);
         }
 
-        public void readConfig(string path)
+        public void readConfig(string pathToConfig)
         {
-            XmlDocument xml = new XmlDocument();
             try
             {
-                xml.Load(path);
-                foreach (XmlNode xnode in xml.SelectNodes("//Node[@Id]"))
-                {
-                    Console.WriteLine("Dupa");
-                    NodeId = xnode.Attributes[Constants.ID].Value;
-                    CloudIP = xnode.Attributes[Constants.CLOUD_IP].Value;
-                    CloudPort = xnode.Attributes[Constants.CLOUD_PORT].Value;
-                    ManagerIP = xnode.Attributes[Constants.MANAGER_IP].Value;
-                    ManagerPort = xnode.Attributes[Constants.MANAGER_PORT].Value;
-                }
+                conf = new Config(pathToConfig, Constants.node);
+                this.NodeId = conf.config[0];
+                this.CloudIP = conf.config[1];
+                this.CloudPort = conf.config[2];
+                this.ManagerIP = conf.config[3];
+                this.ManagerPort = conf.config[4];
+                this.portsIn = conf.portsIn;
+                this.portsOut = conf.portsOut;
                 addLog(logs, networkLibrary.Constants.CONFIG_OK, networkLibrary.Constants.LOG_INFO);
             }
             catch
@@ -64,7 +61,6 @@ namespace NetworkNode
 
         public void startService()
         {
-            Console.WriteLine(CloudIP);
             try
             {
                 cloud = new transportClient(CloudIP, CloudPort);
@@ -89,6 +85,7 @@ namespace NetworkNode
                     color = Brushes.Blue;
                     break;
             }
+
             log.Dispatcher.Invoke(
                  System.Windows.Threading.DispatcherPriority.Normal,
                      new Action(() =>

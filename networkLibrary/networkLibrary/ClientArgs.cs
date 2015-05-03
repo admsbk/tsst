@@ -9,20 +9,9 @@ namespace networkLibrary
 {
     public class ClientArgs : EventArgs
     {
-      
-
-        public string NodeName
-        {
-            get;
-            set;
-        }
-
-        public TcpClient ID
-        {
-            get;
-            set;
-        }
-
+     
+        public string NodeName{get;set;}
+        public TcpClient ID{ get; set; }
         public string NodeID { get; set; }
         
     }

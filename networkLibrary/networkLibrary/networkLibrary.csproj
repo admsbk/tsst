@@ -50,6 +50,7 @@
       <DependentUpon>AboutAuthors.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientArgs.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="EndPoint.cs" />
     <Compile Include="MessageArgs.cs" />

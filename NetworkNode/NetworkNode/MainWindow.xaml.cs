@@ -1,4 +1,5 @@
-﻿using System;
+﻿using networkLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace NetworkNode
 {
@@ -23,10 +25,13 @@ namespace NetworkNode
         string pathToConfig;
         Node node;
 
+
         public MainWindow()
         {
             InitializeComponent();
             node = new Node(this.log);
+            setGraphics();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,7 +48,7 @@ namespace NetworkNode
             if (result == true)
             {
                pathToConfig = dlg.FileName;
-               readConfig(pathToConfig);
+               node.readConfig(pathToConfig);
             }
         }
         private void About_Click(object sender, EventArgs e)
@@ -57,8 +62,19 @@ namespace NetworkNode
             //MessageBox.Show("load conf clicked");
 
         }
-        private void readConfig(string path){
-            node.readConfig(pathToConfig);
+
+        private void setGraphics()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 2);
+            timer.Tick += ((sender, e) =>
+            {
+                if (scroll.VerticalOffset == scroll.ScrollableHeight)
+                {
+                    scroll.ScrollToEnd();
+                }
+            });
+            timer.Start();
         }
     }
 }

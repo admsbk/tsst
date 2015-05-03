@@ -24,5 +24,8 @@ namespace networkLibrary
         public const string MANAGER_PORT = "ManagerPort";
         public const string INPUT_PORT_NODE = "//InputPorts/Port";
         public const string OUTPUT_PORT_NODE = "//OutputPorts/Port";
+
+        //elementType - to read config from xml
+        public const string node = "//Node[@Id]";
     }
 }
