@@ -46,7 +46,7 @@ namespace networkLibrary
                 stream = client.GetStream();
                 clientThread = new Thread(new ThreadStart(ListenForMessage));
                 clientThread.Start();
-                sendMyName();
+                sendMessage("say hello");
 
             }
             else
@@ -57,13 +57,9 @@ namespace networkLibrary
 
         protected void ListenForMessage()
         {
-
-
-            //TcpClient clientSocket = (TcpClient)client;
-
             byte[] message = new byte[4096];
             int bytesRead;
-
+            
             while (stream.CanRead)
             {
                 bytesRead = 0;
@@ -80,26 +76,19 @@ namespace networkLibrary
                 {
                     break;
                 }
-
-                // parser.parseMsgFromCloud(encoder.GetString(message, 0, bytesRead), true);
+                string signal = encoder.GetString(message, 0, bytesRead);
+                Console.WriteLine(message);
+                MessageArgs myArgs = new MessageArgs(signal);
+                OnNewMessageRecived(this, myArgs);
             }
-
-            //Console.WriteLine(signal);
-            MessageArgs myArgs = new MessageArgs(System.Text.Encoding.UTF8.GetString(message));
-            OnNewMessageRecived(this, myArgs);
-
         }
-     
 
-
-        
-        private void sendMyName()
+        public void sendMessage(string msg)
         {
-            {
-                byte[] buffer = encoder.GetBytes("//NAME// " + "PROXY");
-                stream.Write(buffer, 0, buffer.Length);
-                stream.Flush();
-            }
+            byte[] buffer = encoder.GetBytes(msg);
+            stream.Write(buffer, 0, buffer.Length);
+            stream.Flush();
         }
+
     }
 }
