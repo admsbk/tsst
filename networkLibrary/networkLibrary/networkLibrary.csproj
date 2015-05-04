@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SwitchingBox.cs" />
     <Compile Include="transportClient.cs" />
     <Compile Include="transportServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -65,7 +65,10 @@ namespace NetworkNode
             {
                 cloud = new transportClient(CloudIP, CloudPort);
                 cloud.OnNewMessageRecived += new transportClient.NewMsgHandler(newMessageRecived);
-                addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+                if (cloud.isConnected())
+                {
+                    addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+                }
             }
             catch
             {
