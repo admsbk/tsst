@@ -13,3 +13,6 @@ c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\D
 c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
 c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.exe
 c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
