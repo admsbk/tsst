@@ -21,6 +21,9 @@ namespace networkLibrary
         public const int LOG_ERROR = 0;
         public const int LOG_INFO = 1;
 
+        public const int LEFT = 0;
+        public const int RIGHT = 1;
+
         //constants used in loading configuration from xml file
         public const string ID = "Id";
         public const string CLOUD_IP = "CloudHost";
@@ -31,14 +34,15 @@ namespace networkLibrary
         public const string DST_ID = "DstId";
         public const string SRC_PORT_ID = "SrcPortId";
         public const string DST_PORT_ID = "DstPortId";
-        public const string INPUT_PORT_NODE = "//InputPorts/Port";
-        public const string OUTPUT_PORT_NODE = "//OutputPorts/Port";
+        public const string INPUT_PORT = "//InputPorts/Port";
+        public const string OUTPUT_PORT = "//OutputPorts/Port";
 
 
         //elementType - to read config from xml
         public const string node = "//Node[@Id]";
         public const string Cloud = "//Cloud[@Id]";
         public const string Link = "//Link[@Id]";
+        public const string Client = "//Client[@Id]";
 
         //handle messages
         public const string RECIVED_FROM_MANAGER = "Recived from Network Manager:";
@@ -50,8 +54,8 @@ namespace networkLibrary
         public const string DELETE_LINK = "DELETE";
         public const string SHOW_LINK = "SHOW";
         //proponuje wiadomosci typu :
-        //SET%JAKI_PORT&NA_KTORY_PORT
-        //DELETE%JAKI_PORT i DELETE%* - usunie wszystko
-        //SHOW%JAKI_PORT i SHOW%* - pokaze wszystko
+        //KOMU$SET%JAKI_PORT&NA_KTORY_PORT
+        //KOMU$DELETE%JAKI_PORT i DELETE%* - usunie wszystko
+        //KOMU$SHOW%JAKI_PORT i SHOW%* - pokaze wszystko
     }
 }

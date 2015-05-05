@@ -32,13 +32,19 @@ namespace networkLibrary
                 {
                     config.Add(xnode.Attributes[Constants.MANAGER_IP].Value);
                     config.Add(xnode.Attributes[Constants.MANAGER_PORT].Value);
-                    readPorts(xml, Constants.INPUT_PORT_NODE, portsIn);
-                    readPorts(xml, Constants.OUTPUT_PORT_NODE, portsOut);
+                    readPorts(xml, Constants.INPUT_PORT, portsIn);
+                    readPorts(xml, Constants.OUTPUT_PORT, portsOut);
                 }
                 if (elementType == Constants.Cloud)
                 {
                     
                     readCloudPorts(xml, Constants.Link);
+                }
+
+                if (elementType == Constants.Client)
+                {
+                    readPorts(xml, Constants.INPUT_PORT, portsIn);
+                    readPorts(xml, Constants.OUTPUT_PORT, portsOut);
                 }
             }
         }

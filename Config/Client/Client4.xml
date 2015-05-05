@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Client Id="ClientNode4" CloudHost="localhost" CloudPort="3333" >
+	<Ports>
+		<InputPorts>
+			<Port Id="CI1" />
+		</InputPorts>
+		<OutputPorts>
+			<Port Id="CO1" />
+		</OutputPorts>
+	</Ports>
+</Client>
