@@ -90,5 +90,17 @@ namespace networkLibrary
             stream.Flush();
         }
 
+        public bool isConnected()
+        {
+            if (this.client.Connected)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

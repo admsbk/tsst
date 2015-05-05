@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace Cloud
 {
@@ -28,13 +29,15 @@ namespace Cloud
         public MainWindow()
         {
             InitializeComponent();
+            setGraphics();
+            cloud = new NetworkCloud(this.links, this.nodes, this.logList);
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try{
-                cloud = new NetworkCloud(this.links, this.nodes, this.logList);
+                cloud.startService();
                 this.StartButton.IsEnabled = false;
             }
             catch{
@@ -58,7 +61,7 @@ namespace Cloud
         {
             if (cloud != null && cloud.isStarted())
             {
-                cloud.stopServer(); //dodać if started
+                cloud.stopServer(); 
             }
         }
 
@@ -71,6 +74,8 @@ namespace Cloud
             if (result == true)
             {
                 pathToConfig = dlg.FileName;
+                cloud.readConfig(pathToConfig);
+
             }
         }
         private void About_Click(object sender, EventArgs e)
@@ -83,6 +88,19 @@ namespace Cloud
         {
             //MessageBox.Show("load conf clicked");
 
+        }
+        private void setGraphics()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 2);
+            timer.Tick += ((sender, e) =>
+            {
+                if (scroll.VerticalOffset == scroll.ScrollableHeight)
+                {
+                    scroll.ScrollToEnd();
+                }
+            });
+            timer.Start();
         }
     }
 }

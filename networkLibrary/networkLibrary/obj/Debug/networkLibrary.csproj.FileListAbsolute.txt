@@ -12,7 +12,6 @@ D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\netwo
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
 D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
