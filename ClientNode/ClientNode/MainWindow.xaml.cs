@@ -25,6 +25,7 @@ namespace ClientNode
         public MainWindow()
         {
             InitializeComponent();
+            client = new Client(this.chat, this.txtBlock);
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 2);
@@ -40,9 +41,12 @@ namespace ClientNode
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            client = new Client(this.chat);
-            this.statusBar.Text = "Connected";
-            this.ConnectButton.IsEnabled = false;
+            client.startService();
+            if (client.isStarted())
+            {
+                this.ConnectButton.IsEnabled = false;
+            }
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -50,6 +54,29 @@ namespace ClientNode
             //this.chat.TextAlignment = TextAlignment.Right;
             client.sendMessage(this.toSend.Text);
             //this.chat.TextAlignment = TextAlignment.Left;
+        }
+        private void Load_Conf_Click(object sender, EventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "Text documents (.xml)|*.xml";
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                string pathToFile = dlg.FileName; 
+                client.readConfig(pathToFile);
+            }
+        }
+        private void About_Click(object sender, EventArgs e)
+        {/*
+            AboutAuthors about = new AboutAuthors();
+            about.ShowDialog();
+            */
+        }
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("load conf clicked");
+
         }
     }
 }
