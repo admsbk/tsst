@@ -58,3 +58,18 @@ C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLi
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.g.resources
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.Properties.Resources.resources
 C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\Client.exe.config
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.exe
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\Client.exe
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\Client.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\MainWindow.baml
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\MainWindow.g.cs
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\App.g.cs
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client_MarkupCompile.cache
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.g.resources
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.Properties.Resources.resources
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.csproj.GenerateResource.Cache
