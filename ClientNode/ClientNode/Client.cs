@@ -41,7 +41,7 @@ namespace ClientNode
                 displayStatusMessage(Constants.SERVICE_START_OK, Constants.LOG_INFO);
             }
 
-            catch (Exception e)
+            catch
             {
                 displayStatusMessage(Constants.SERVICE_START_ERROR, Constants.LOG_ERROR);
 
@@ -50,7 +50,7 @@ namespace ClientNode
 
         public bool isStarted()
         {
-            if (client != null)
+            if (client != null && client.isConnected())
             {
                 return true;
             }
