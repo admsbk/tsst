@@ -14,10 +14,12 @@
             </TabItem>
             <TabItem Header="Link">
                 <Grid Background="#FFE5E5E5">
-                    <ListView HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="487">
+                    <ListView x:Name="links" HorizontalAlignment="Left" Height="244" VerticalAlignment="Top" Width="352">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn/>
+                                <GridViewColumn Width="30" Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                                <GridViewColumn Width="100" Header="Source" DisplayMemberBinding="{Binding src}"/>
+                                <GridViewColumn Width="100" Header="Destination" DisplayMemberBinding="{Binding dst}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

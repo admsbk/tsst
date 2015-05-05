@@ -15,6 +15,9 @@ namespace networkLibrary
         public const string SERVICE_START_OK = "Service started correctly";
         public const string SERVICE_START_ERROR = "Service started incorrectly";
         public const string CANNOT_CONNECT_TO_CLOUD = "Cannot connect to cloud";
+        public const string CANNOT_CONNECT_TO_MANAGER = "Cannot connect to Network Manager";
+
+
         public const int LOG_ERROR = 0;
         public const int LOG_INFO = 1;
 
@@ -36,5 +39,19 @@ namespace networkLibrary
         public const string node = "//Node[@Id]";
         public const string Cloud = "//Cloud[@Id]";
         public const string Link = "//Link[@Id]";
+
+        //handle messages
+        public const string RECIVED_FROM_MANAGER = "Recived from Network Manager:";
+        public const string FORWARD_MESSAGE = "Forwarding following message:";
+        public const string INVALID_PORT = "No such port in Forward Table";
+
+        //msgs from Network Manager
+        public const string SET_LINK = "SET";
+        public const string DELETE_LINK = "DELETE";
+        public const string SHOW_LINK = "SHOW";
+        //proponuje wiadomosci typu :
+        //SET%JAKI_PORT&NA_KTORY_PORT
+        //DELETE%JAKI_PORT i DELETE%* - usunie wszystko
+        //SHOW%JAKI_PORT i SHOW%* - pokaze wszystko
     }
 }

@@ -29,7 +29,7 @@ namespace NetworkNode
         public MainWindow()
         {
             InitializeComponent();
-            node = new Node(this.log);
+            node = new Node(this.log, this.links);
             setGraphics();
 
         }
@@ -53,9 +53,10 @@ namespace NetworkNode
         }
         private void About_Click(object sender, EventArgs e)
         {
-            //AboutAuthors about = new AboutAuthors();
-            //about.ShowDialog();
-
+            /*
+            AboutAuthors about = new AboutAuthors();
+            about.ShowDialog();
+            */
         }
         private void Exit_Click(object sender, EventArgs e)
         {
