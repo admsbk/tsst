@@ -54,8 +54,25 @@ namespace networkLibrary
         public const string DELETE_LINK = "DELETE";
         public const string SHOW_LINK = "SHOW";
         //proponuje wiadomosci typu :
-        //KOMU$SET%JAKI_PORT&NA_KTORY_PORT
+        //KOMU$SET%JAKI_PORT&NA_KTORY_PORT - trzeba rozróżnić kliencki/sieciowy
         //KOMU$DELETE%JAKI_PORT i DELETE%* - usunie wszystko
         //KOMU$SHOW%JAKI_PORT i SHOW%* - pokaze wszystko
+
+        
+
+        //other Network Manager messages
+        public const string NONEXISTENT_NODE = "No such node in network/Wrong command";
+        public const string WRONG_IPORT = "Wrong input port";
+        public const string WRONG_OPORT = "Wrong output port";
+        public const string TOO_MANY = "Too many words";
+        public const string WRONG_COM = "Wrong command";
+        public const string COMMAND = "Command: ";
+        public const string MANAGER_STARTED = "Network manager started correctly";
+        public const string BITRATE = "BitRate";
+        //log types
+        public const int RECEIVED = 0;
+        public const int TEXT = 1;
+        public const int INFO = 2;
+        public const int ERROR = 3;
     }
 }

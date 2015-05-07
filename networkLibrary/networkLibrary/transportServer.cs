@@ -11,10 +11,10 @@ namespace networkLibrary
 {
     public class transportServer
     {
-        protected ASCIIEncoding encoder;
-        protected NetworkStream stream;
-        private TcpListener serverSocket;
-        private Thread serverThread;
+        public ASCIIEncoding encoder;
+        public NetworkStream stream;
+        public TcpListener serverSocket;
+        public Thread serverThread;
         //private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
         private List<TcpClient> clientSocket;
 
@@ -36,7 +36,7 @@ namespace networkLibrary
                 throw new Exception("server has been started");
             }
         }
-        private void ListenForClients()
+        public void ListenForClients()
         {
             
             this.serverSocket.Start();

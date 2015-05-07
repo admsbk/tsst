@@ -83,9 +83,10 @@ namespace NetworkNode
                 this.portsOut = conf.portsOut;
                 addLog(logs, networkLibrary.Constants.CONFIG_OK, networkLibrary.Constants.LOG_INFO);
             }
-            catch
+            catch(Exception e)
             {
                 addLog(logs, networkLibrary.Constants.CONFIG_ERROR, networkLibrary.Constants.LOG_INFO);
+                System.Console.WriteLine(e);
             }
         }
 
