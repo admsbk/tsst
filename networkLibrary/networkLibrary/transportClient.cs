@@ -92,7 +92,7 @@ namespace networkLibrary
 
         public bool isConnected()
         {
-            if (this.client!=null && this.client.Connected)
+            if (this.client!=null)
             {
                 return true;
             }

@@ -45,7 +45,7 @@ namespace Cloud
         {
             try
             {
-
+                Console.WriteLine(Convert.ToInt32(this.CloudPort));
                 server = new transportServer(Convert.ToInt32(this.CloudPort));
                 sockests = new List<TcpClient>();
                 reqListener = new transportServer.NewClientHandler(newClientRequest);
@@ -65,7 +65,7 @@ namespace Cloud
             }
             catch
             {
-                
+                addLog(this.logs, Constants.SERVICE_START_ERROR, Constants.LOG_ERROR);
             }
         }
         private void newClientRequest(object a, ClientArgs e)
@@ -79,7 +79,7 @@ namespace Cloud
                     this.nodes.Items.Add(e);
                     
                 }));
-            server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));
+            //server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));
         }
 
         private void newMessageRecived(object a, MessageArgs e)
