@@ -77,5 +77,10 @@ namespace NetworkNode
             });
             timer.Start();
         }
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+
+            node.stopService();
+        }
     }
 }

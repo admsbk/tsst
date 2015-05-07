@@ -169,6 +169,7 @@ namespace networkLibrary
                 }
             }
            */
+           
             int numberofclientSockets = clientSocket.Count;
             for (int x = 0; x < numberofclientSockets;x++ )
             {
@@ -192,6 +193,8 @@ namespace networkLibrary
                     try
                     {
                         serverSocket.Stop();
+                        if (serverThread.IsAlive)
+                        { serverThread.Abort(); }
                     }
                     catch
                     {

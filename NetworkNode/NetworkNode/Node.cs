@@ -204,5 +204,13 @@ namespace NetworkNode
                      })
                  );
         }
+        public void stopService()
+        {
+           
+            cloud.stopService();
+            cloud = null;
+            manager.stopService();
+            manager = null;
+        }
     }
 }
