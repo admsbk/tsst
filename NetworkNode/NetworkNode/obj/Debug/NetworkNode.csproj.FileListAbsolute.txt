@@ -34,7 +34,6 @@ C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
