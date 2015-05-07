@@ -99,5 +99,11 @@ namespace networkLibrary
             }
         }
 
+        public void stopService()
+        {
+            client = null;
+            clientThread.Abort();
+        }
+
     }
 }

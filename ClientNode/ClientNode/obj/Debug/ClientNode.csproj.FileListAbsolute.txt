@@ -1,96 +1,15 @@
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\App.g.cs
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-c:\users\malec\documents\visual studio 2013\Projects\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-<<<<<<< HEAD
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-=======
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\App.g.cs
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\wcale_nie_projekt\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-D:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-C:\Users\Malec\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
->>>>>>> e181a003a8b309f6610852bc2b27272d4705a0ff
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
-E:\projekt\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb

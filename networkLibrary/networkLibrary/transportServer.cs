@@ -50,10 +50,10 @@ namespace networkLibrary
                     TcpClient clientSocket = this.serverSocket.AcceptTcpClient();
                     ClientArgs args = new ClientArgs();
 
-                    args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
-                    args.ID = clientSocket;
+                   // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
+                   // args.ID = clientSocket;
 
-                    this.clientSocket.Add(clientSocket);
+                    //this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
 
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));
@@ -97,6 +97,7 @@ namespace networkLibrary
                 string signal = encoder.GetString(message, 0, bytesRead);
                 
                 MessageArgs myArgs = new MessageArgs(signal);
+                myArgs.ID = clientSocket;
                 OnNewMessageRecived(this, myArgs);
                
             }

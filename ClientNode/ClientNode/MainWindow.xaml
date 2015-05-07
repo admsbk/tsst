@@ -20,10 +20,10 @@
             <Button x:Name="ConnectButton" Content="Connect to Cloud" HorizontalAlignment="Left" Height="26" Margin="10,0,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click"/>
         </GroupBox>
         <GroupBox Header="Status" HorizontalAlignment="Left" Height="49" Margin="183,32,0,0" VerticalAlignment="Top" Width="146" >
-            <TextBlock x:Name="statusBar" HorizontalAlignment="Right" TextAlignment="Center" Margin="0,0,-2,0" TextWrapping="Wrap" Text="Disconnected" VerticalAlignment="Center" Height="27" Width="136">
+            <TextBlock x:Name="statusBar" HorizontalAlignment="Right" TextAlignment="Center" Margin="0,6,-2,0" TextWrapping="Wrap" Text="Disconnected" Foreground="Red" VerticalAlignment="Center" Height="21" Width="136">
 
             </TextBlock>
-            
+
 
         </GroupBox>
         <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="348">

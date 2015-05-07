@@ -73,3 +73,18 @@ E:\projekt\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.res
 E:\projekt\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
 E:\projekt\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
 E:\projekt\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache

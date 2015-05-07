@@ -25,7 +25,7 @@ namespace ClientNode
         public MainWindow()
         {
             InitializeComponent();
-            client = new Client(this.chat, this.txtBlock);
+            client = new Client(this.chat, this.txtBlock, this);
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 2);
@@ -45,6 +45,8 @@ namespace ClientNode
             if (client.isStarted())
             {
                 this.ConnectButton.IsEnabled = false;
+                this.statusBar.Text = "Connected";
+                this.statusBar.Foreground = Brushes.Green;
             }
             
         }
@@ -78,5 +80,12 @@ namespace ClientNode
             //MessageBox.Show("load conf clicked");
 
         }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+
+
+        }
+
     }
 }

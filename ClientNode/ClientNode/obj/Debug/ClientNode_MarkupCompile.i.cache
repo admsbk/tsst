@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\
+=======
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\
+>>>>>>> ababe5c767d26fed4a0b27c4097e51df8eec7199
 ClientNode
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\ClientNode\ClientNode\App.xaml
 11151548125
 
 10-1850000450
 13-375152862
+=======
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\ClientNode\ClientNode\App.xaml
+11151548125
+
+10-315047390
+13232669537
+>>>>>>> ababe5c767d26fed4a0b27c4097e51df8eec7199
 MainWindow.xaml;
 
 False

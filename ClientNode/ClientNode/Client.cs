@@ -19,25 +19,36 @@ namespace ClientNode
         private TextBlock status;
         private int messageNumber = 0;
         private int rIndex;
+        private string title;
+        private MainWindow mainWindow;
+        private string name { get; set; }
         private string nodeName { get; set; }
         private string CloudIP { get; set; }
         private string CloudPort { get; set; }
         private List<string> portsIn { get; set; }
         private List<string> portsOut { get; set; }
+        private transportClient.NewMsgHandler messageHandler { get; set; }
 
-        public Client(Grid chat, TextBlock status)
+        public Client(Grid chat, TextBlock status, MainWindow mainWindow)
         {
+            this.chat = chat;
+            this.status = status;
+            this.mainWindow = mainWindow;
+
             this.chat = chat;
             this.status = status;
             rIndex = Grid.GetRow(chat);
         }
 
+
         public void startService()
         {
             try
             {
+                messageHandler = new transportClient.NewMsgHandler(newMessageRecived);
                 client = new transportClient(CloudIP, CloudPort);
-                client.OnNewMessageRecived += new transportClient.NewMsgHandler(newMessageRecived);
+                client.OnNewMessageRecived += messageHandler;
+                client.sendMessage(nodeName + "#");
                 displayStatusMessage(Constants.SERVICE_START_OK, Constants.LOG_INFO);
             }
 
@@ -69,6 +80,10 @@ namespace ClientNode
                 this.nodeName = conf.config[0];
                 this.CloudIP = conf.config[1];
                 this.CloudPort = conf.config[2];
+                this.name = conf.config[3];
+                this.portsIn = conf.portsIn;
+                this.portsOut = conf.portsOut;
+                mainWindow.Title = "Client " + this.name;
                 displayStatusMessage(Constants.CONFIG_OK, Constants.LOG_INFO);
             }
             catch(Exception e)
@@ -84,7 +99,7 @@ namespace ClientNode
 
         public void sendMessage(string msg)
         {
-            client.sendMessage(msg);
+            client.sendMessage(this.nodeName+"%"+this.portsOut[0]+"&"+msg);
             addChatMessage(msg, Constants.LEFT);
         }
 
@@ -137,6 +152,16 @@ namespace ClientNode
                 })
             );
         }
+
+        public void stopService()
+        {
+            client.OnNewMessageRecived -= messageHandler;
+            messageHandler = null;
+            client.stopService();
+            client = null;
+        }
+
+
 
     }
 }

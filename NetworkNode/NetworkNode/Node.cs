@@ -44,10 +44,10 @@ namespace NetworkNode
 
         private void newOrderRecived(object myObject, MessageArgs myArgs)
         {    
-            string[] check = myArgs.Message.Split('$');
+            string[] check = myArgs.Message.Split('%');
             if (check[0] == NodeId)
             {
-                parseOrder(check[1]);
+                parseOrder(check[1]+"%"+check[2]+"%"+check[3]);
                 addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
             }            
         }
@@ -99,6 +99,9 @@ namespace NetworkNode
 
                 manager = new transportClient(ManagerIP, ManagerPort);
                 manager.OnNewMessageRecived += new transportClient.NewMsgHandler(newOrderRecived);
+
+                cloud.sendMessage(this.NodeId+"#");
+
                 addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
                 
             }
@@ -133,9 +136,8 @@ namespace NetworkNode
             switch (parsed[0])
             {
                 case Constants.SET_LINK:
-                    string[] ports = parsed[1].Split('&');
-                    switchTable.addLink(ports[0], ports[1]);
-                    Link newLink = new Link(Convert.ToString(linkList.Count() + 1), ports[0], ports[1]);
+                    switchTable.addLink(parsed[1], parsed[2]);
+                    Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed[1], parsed[2]);
                     linkList.Add(newLink);
                     this.links.Items.Add(newLink);
                     break;

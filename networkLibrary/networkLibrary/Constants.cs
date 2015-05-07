@@ -16,6 +16,7 @@ namespace networkLibrary
         public const string SERVICE_START_ERROR = "Service started incorrectly";
         public const string CANNOT_CONNECT_TO_CLOUD = "Cannot connect to cloud";
         public const string CANNOT_CONNECT_TO_MANAGER = "Cannot connect to Network Manager";
+        public const string UNREACHABLE_DST = "Unreachable component:";
 
 
         public const int LOG_ERROR = 0;
@@ -36,6 +37,7 @@ namespace networkLibrary
         public const string DST_PORT_ID = "DstPortId";
         public const string INPUT_PORT = "//InputPorts/Port";
         public const string OUTPUT_PORT = "//OutputPorts/Port";
+        public const string CLIENT_NAME = "Name";
 
 
         //elementType - to read config from xml
