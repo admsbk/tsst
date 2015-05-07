@@ -152,7 +152,7 @@ namespace networkLibrary
         public void stopServer()
         {
 
-            foreach (TcpClient client in clientSocket)
+          /*  foreach (TcpClient client in clientSocket)
             {
                 try
                 {
@@ -165,17 +165,36 @@ namespace networkLibrary
                     Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
             }
-            if (serverSocket != null)
+           */
+            int numberofclientSockets = clientSocket.Count;
+            for (int x = 0; x < numberofclientSockets;x++ )
             {
                 try
                 {
-                    serverSocket.Stop();
+                    
+                    clientSocket.ElementAt<TcpClient>(x).GetStream().Close();
+                    clientSocket.ElementAt<TcpClient>(x).Close();
+                    clientSocket.Remove(clientSocket.ElementAt<TcpClient>(x));
                 }
                 catch
                 {
-                    Console.WriteLine("Unable to stop cloud");
+                    Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
+
             }
+
+
+                if (serverSocket != null)
+                {
+                    try
+                    {
+                        serverSocket.Stop();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Unable to stop cloud");
+                    }
+                }
             serverSocket = null;
             serverThread = null;
         }

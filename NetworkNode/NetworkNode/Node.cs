@@ -99,20 +99,8 @@ namespace NetworkNode
 
                 manager = new transportClient(ManagerIP, ManagerPort);
                 manager.OnNewMessageRecived += new transportClient.NewMsgHandler(newOrderRecived);
-
-                if (cloud.isConnected() && manager.isConnected())
-                {
-                    addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
-                }
-
-                else if (!cloud.isConnected())
-                {
-                    addLog(logs, Constants.CANNOT_CONNECT_TO_CLOUD, Constants.LOG_ERROR);
-                }
-                else
-                {
-                    addLog(logs, Constants.CANNOT_CONNECT_TO_MANAGER, Constants.LOG_ERROR);
-                }
+                addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+                
             }
             catch
             {
@@ -120,6 +108,20 @@ namespace NetworkNode
                 addLog(logs, Constants.CANNOT_CONNECT_TO_CLOUD, Constants.LOG_ERROR);
                 addLog(logs, Constants.CANNOT_CONNECT_TO_MANAGER, Constants.LOG_ERROR);
             }
+
+           /* if (cloud.isConnected() && manager.isConnected())
+            {
+                addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+            }
+
+            if (cloud.isConnected() == false)
+            {
+                addLog(logs, Constants.CANNOT_CONNECT_TO_CLOUD, Constants.LOG_ERROR);
+            }
+            if (manager.isConnected() == false)
+            {
+                addLog(logs, Constants.CANNOT_CONNECT_TO_MANAGER, Constants.LOG_ERROR);
+            }*/
         }
 
         private void parseOrder(string order)

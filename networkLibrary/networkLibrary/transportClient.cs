@@ -34,19 +34,15 @@ namespace networkLibrary
                 ipAddress = IPAddress.Parse(ip);
             }
 
-            try
-            {
-                int dstPort = Convert.ToInt32(port);
-                client.Connect(new IPEndPoint(ipAddress, dstPort));
-            }
-            catch { }
+            int dstPort = Convert.ToInt32(port);
+            client.Connect(new IPEndPoint(ipAddress, dstPort));
 
             if (client.Connected)
             {
                 stream = client.GetStream();
                 clientThread = new Thread(new ThreadStart(ListenForMessage));
                 clientThread.Start();
-                sendMessage("say hello");
+                //sendMessage("say hello");
 
             }
             else
@@ -69,6 +65,7 @@ namespace networkLibrary
                 }
                 catch
                 {
+                    Console.WriteLine("fdsabkijsdfa");
                     break;
                 }
 
@@ -92,7 +89,7 @@ namespace networkLibrary
 
         public bool isConnected()
         {
-            if (this.client!=null && this.client.Connected)
+            if (this.client!=null)
             {
                 return true;
             }
