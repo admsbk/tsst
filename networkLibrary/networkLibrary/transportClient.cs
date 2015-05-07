@@ -101,8 +101,10 @@ namespace networkLibrary
 
         public void stopService()
         {
+            client.GetStream().Close();
+            client.Close();
             client = null;
-            clientThread.Abort();
+            clientThread.Join();
         }
 
     }
