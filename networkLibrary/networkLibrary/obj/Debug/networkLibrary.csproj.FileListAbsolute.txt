@@ -1,26 +1,8 @@
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
-<<<<<<< HEAD
-=======
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
-E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
-E:\projekt\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
->>>>>>> fc415feb0377697a027edd30326f6d52ce5cc06e

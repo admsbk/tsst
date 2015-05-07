@@ -16,7 +16,9 @@ namespace networkLibrary
         public TcpListener serverSocket;
         public Thread serverThread;
         //private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
-        private List<TcpClient> clientSocket;
+        public List<TcpClient> clientSocket;
+
+
 
         public transportServer(int port)
         {

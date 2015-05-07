@@ -9,7 +9,6 @@ namespace NetworkManager
 {
     class CommandVerifier
     {
-        Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
         string error = "";
         int value;
 
@@ -18,25 +17,36 @@ namespace NetworkManager
             return error;
         }
 
-        public bool verifyCommand(string command)
+        public bool verifyCommand(string command/*,List<TcpClient> clientSockets*/)
         {
             string[] subcommands = command.Split('%');
+            /*int i = 0;
+            List<string> clientSocketsID = new List<string>();
+
+            foreach(TcpClient client in clientSockets)
+            {
+                
+                 clientSocketsID[i] = clientSockets[i].ToString();
+                 i++;
+            }
             
-            if (!clientSockets.ContainsValue(subcommands[0]))
+            
+            
+            if (!clientSocketsID.Contains(subcommands[0]))
             {
                 error = networkLibrary.Constants.NONEXISTENT_NODE;
                 return false;
-            }
+            }*/
 
-            else if (subcommands[1].Equals(networkLibrary.Constants.SET_LINK))
+            if (subcommands[1].Equals(networkLibrary.Constants.SET_LINK))
                 {
-                    if ((!subcommands[2].Contains("C")) && (!subcommands[2].Contains("N")))
+                    /*if ((!subcommands[2].Contains("C")) && (!subcommands[2].Contains("N")))
                     {
                         error = networkLibrary.Constants.WRONG_IPORT;
                         return false;
                     }
 
-                    else if (!int.TryParse(subcommands[2].Substring(1), out value))
+                    if (!int.TryParse(subcommands[2].Substring(1), out value))
                     {
                         error = networkLibrary.Constants.WRONG_IPORT;
                         return false;
@@ -54,7 +64,7 @@ namespace NetworkManager
                         return false;
                     }
 
-                    else
+                    else/*/
                     {
                         return true;
                     }

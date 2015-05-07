@@ -16,7 +16,7 @@ namespace NetworkManager
     {
         public transportServer server;
         //private ListView nodes;
-        private List<TcpClient> clientSockets = new List<TcpClient>();
+        //private List<TcpClient> clientSockets = new List<TcpClient>();
         private CommandVerifier commandVerifier;
         private Logs logs;
 
@@ -72,16 +72,10 @@ namespace NetworkManager
 
                    }
                    
-
-                   foreach (TcpClient client in clientSockets)
+                   
+                   foreach (TcpClient client in server.clientSocket)
                    {
-                       if (client.Connected)
-                       {
-                           server.stream = client.GetStream();
-                           byte[] buffer = server.encoder.GetBytes(command);
-                           server.stream.Write(buffer, 0, buffer.Length);
-                           server.stream.Flush();
-                       }
+                       server.sendMessage(client, command);
                    }
                    returned = true;
                }
