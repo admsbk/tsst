@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Cloud Id = "NetworkCloud" CloudHost="localhost" CloudPort="15000" >
+<Cloud Id = "NetworkCloud" CloudHost="localhost" CloudPort="3333" >
 	<Topology>
 		<Link Id="Link1" SrcId="ClientNode1" DstId="NetworkNode1" SrcPortId="CO1" DstPortId="CI1" /> 
 		<Link Id="Link2" SrcId="ClientNode2" DstId="NetworkNode3" SrcPortId="CO1" DstPortId="CI1" />

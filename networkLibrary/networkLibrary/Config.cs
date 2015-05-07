@@ -43,6 +43,7 @@ namespace networkLibrary
 
                 if (elementType == Constants.Client)
                 {
+                    config.Add(xnode.Attributes[Constants.CLIENT_NAME].Value);
                     readPorts(xml, Constants.INPUT_PORT, portsIn);
                     readPorts(xml, Constants.OUTPUT_PORT, portsOut);
                 }

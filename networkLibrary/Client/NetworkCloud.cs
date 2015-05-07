@@ -27,7 +27,7 @@ namespace Cloud
         private List<string> portsOut { get; set; }
         private Config conf;
         private SwitchingBox switchBox;
-        private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
+        private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
         private List<TcpClient> sockests;
         transportServer.NewClientHandler reqListener;
         transportServer.NewMsgHandler msgListener;
@@ -45,7 +45,7 @@ namespace Cloud
         {
             try
             {
-
+                Console.WriteLine(Convert.ToInt32(this.CloudPort));
                 server = new transportServer(Convert.ToInt32(this.CloudPort));
                 sockests = new List<TcpClient>();
                 reqListener = new transportServer.NewClientHandler(newClientRequest);
@@ -65,26 +65,45 @@ namespace Cloud
             }
             catch
             {
-                
+                addLog(this.logs, Constants.SERVICE_START_ERROR, Constants.LOG_ERROR);
             }
         }
         private void newClientRequest(object a, ClientArgs e)
         {
-
-            addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.NodeName, Constants.LOG_INFO);
-            sockests.Add(e.ID);
-            e.NodeID = "Client:" + sockests.IndexOf(e.ID);
+            /*
+            //addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.NodeName, Constants.LOG_INFO);
+            //sockests.Add(e.ID);
+            //e.NodeID = "Client:" + sockests.IndexOf(e.ID);
             Application.Current.Dispatcher.Invoke((Action)(() =>
                 {
                     this.nodes.Items.Add(e);
                     
                 }));
-            server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));
+            //server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));*/
         }
 
         private void newMessageRecived(object a, MessageArgs e)
         {
-            addLog(this.logs, Constants.NEW_MSG_RECIVED+ " "+e.Message, Constants.LOG_INFO);
+            if (e.Message.Split('#').Length == 1)
+            {
+                string[] getSenderId = e.Message.Split('%');
+                string[] getNextNode = switchBox.forwardMessage(e.Message).Split('%');
+                try
+                {
+                    server.sendMessage(clientSockets[getNextNode[0]], getSenderId[0] + "%" + getNextNode[1]);
+                }
+                catch
+                {
+                    addLog(this.logs, Constants.UNREACHABLE_DST+ " " + getNextNode[0], Constants.LOG_ERROR);
+                }
+                addLog(this.logs, Constants.NEW_MSG_RECIVED + " " + e.Message, Constants.LOG_INFO);
+                addLog(this.logs, Constants.FORWARD_MESSAGE + getNextNode[0], Constants.LOG_INFO);
+            }
+            else
+            {
+                clientSockets.Add(e.Message.Split('#')[0], e.ID);
+                addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.Message.Split('#')[0], Constants.LOG_INFO);
+            }
         }
 
         public void readConfig(string pathToConfig)

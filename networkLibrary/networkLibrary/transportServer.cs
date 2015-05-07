@@ -11,10 +11,10 @@ namespace networkLibrary
 {
     public class transportServer
     {
-        protected ASCIIEncoding encoder;
-        protected NetworkStream stream;
-        private TcpListener serverSocket;
-        private Thread serverThread;
+        public ASCIIEncoding encoder;
+        public NetworkStream stream;
+        public TcpListener serverSocket;
+        public Thread serverThread;
         //private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
         private List<TcpClient> clientSocket;
 
@@ -36,7 +36,7 @@ namespace networkLibrary
                 throw new Exception("server has been started");
             }
         }
-        private void ListenForClients()
+        public void ListenForClients()
         {
             
             this.serverSocket.Start();
@@ -48,10 +48,10 @@ namespace networkLibrary
                     TcpClient clientSocket = this.serverSocket.AcceptTcpClient();
                     ClientArgs args = new ClientArgs();
 
-                    args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
-                    args.ID = clientSocket;
+                   // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
+                   // args.ID = clientSocket;
 
-                    this.clientSocket.Add(clientSocket);
+                    //this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
 
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));
@@ -95,6 +95,7 @@ namespace networkLibrary
                 string signal = encoder.GetString(message, 0, bytesRead);
                 
                 MessageArgs myArgs = new MessageArgs(signal);
+                myArgs.ID = clientSocket;
                 OnNewMessageRecived(this, myArgs);
                
             }
@@ -152,7 +153,7 @@ namespace networkLibrary
         public void stopServer()
         {
 
-            foreach (TcpClient client in clientSocket)
+          /*  foreach (TcpClient client in clientSocket)
             {
                 try
                 {
@@ -165,17 +166,36 @@ namespace networkLibrary
                     Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
             }
-            if (serverSocket != null)
+           */
+            int numberofclientSockets = clientSocket.Count;
+            for (int x = 0; x < numberofclientSockets;x++ )
             {
                 try
                 {
-                    serverSocket.Stop();
+                    
+                    clientSocket.ElementAt<TcpClient>(x).GetStream().Close();
+                    clientSocket.ElementAt<TcpClient>(x).Close();
+                    clientSocket.Remove(clientSocket.ElementAt<TcpClient>(x));
                 }
                 catch
                 {
-                    Console.WriteLine("Unable to stop cloud");
+                    Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
+
             }
+
+
+                if (serverSocket != null)
+                {
+                    try
+                    {
+                        serverSocket.Stop();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Unable to stop cloud");
+                    }
+                }
             serverSocket = null;
             serverThread = null;
         }

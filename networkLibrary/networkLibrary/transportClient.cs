@@ -89,7 +89,7 @@ namespace networkLibrary
 
         public bool isConnected()
         {
-            if (this.client!=null && this.client.Connected)
+            if (this.client!=null)
             {
                 return true;
             }
@@ -97,6 +97,12 @@ namespace networkLibrary
             {
                 return false;
             }
+        }
+
+        public void stopService()
+        {
+            client = null;
+            clientThread.Abort();
         }
 
     }

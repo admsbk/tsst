@@ -1,0 +1,44 @@
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe.config
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Form1.resources
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Properties.Resources.resources
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.exe
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.pdb
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\PROJEKTY\tsst\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe.config
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.exe
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Form1.resources
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Properties.Resources.resources
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csproj.GenerateResource.Cache
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe.config
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.pdb
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.pdb
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.dll
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.pdb
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Form1.resources
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Properties.Resources.resources
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csproj.GenerateResource.Cache
+E:\projekt\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe.config
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Form1.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Properties.Resources.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.exe

@@ -15,7 +15,9 @@ namespace networkLibrary
             SwitchingTable = new Dictionary<string, string>();
         }
 
-        //WZÓR WIADOMOSCI: "KTO_PRZYSLAL%Z_KTOREGO_PORTU&cos_tam_dalej"
+        //WZÓR WIADOMOSCI: "KTO_PRZYSLAL%Z_KTOREGO_PORTU&cos_tam_dalej" 
+        //
+
         //ZWRACA: "KOMU%NA_KTORY_PORT&cos_tam_dalej"           ale w cos_tam_dalej trzeba dać inne delimetery niż & i %
         public string forwardMessage(string message)
         {
@@ -25,7 +27,7 @@ namespace networkLibrary
             if (SwitchingTable.ContainsKey(tempMessage[0]))
             {
                 string dstMessage = SwitchingTable[tempMessage[0]];
-                dstMessage += tempMessage[1];
+                dstMessage += "&"+tempMessage[1];//dodanie payloadu po prostu
                 return dstMessage;
             }
             else
@@ -34,6 +36,7 @@ namespace networkLibrary
             }
         }
 
+        //szablon: src - "OD_KOGO%PORT"    dst - "DO_KOGO%PORT"
         public void addLink(string src, string dst)
         {
             if (!SwitchingTable.ContainsKey(src))
