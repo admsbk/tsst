@@ -42,9 +42,10 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(129, 268);
+            this.Start.Location = new System.Drawing.Point(172, 330);
+            this.Start.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(88, 23);
+            this.Start.Size = new System.Drawing.Size(117, 28);
             this.Start.TabIndex = 0;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
@@ -52,17 +53,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 297);
+            this.textBox1.Location = new System.Drawing.Point(16, 366);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
+            this.textBox1.Size = new System.Drawing.Size(272, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SendToAll
             // 
-            this.SendToAll.Location = new System.Drawing.Point(223, 297);
+            this.SendToAll.Location = new System.Drawing.Point(297, 366);
+            this.SendToAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SendToAll.Name = "SendToAll";
-            this.SendToAll.Size = new System.Drawing.Size(75, 20);
+            this.SendToAll.Size = new System.Drawing.Size(100, 25);
             this.SendToAll.TabIndex = 2;
             this.SendToAll.Text = "Send to all";
             this.SendToAll.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             this.Logs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.Logs.FullRowSelect = true;
-            this.Logs.Location = new System.Drawing.Point(12, 12);
+            this.Logs.Location = new System.Drawing.Point(16, 15);
+            this.Logs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logs.Name = "Logs";
-            this.Logs.Size = new System.Drawing.Size(506, 250);
+            this.Logs.Size = new System.Drawing.Size(673, 307);
             this.Logs.TabIndex = 8;
             this.Logs.Tag = "Logs";
             this.Logs.UseCompatibleStateImageBehavior = false;
@@ -89,14 +93,16 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // LoadConfigurationButton
             // 
-            this.LoadConfigurationButton.Location = new System.Drawing.Point(12, 268);
+            this.LoadConfigurationButton.Location = new System.Drawing.Point(16, 330);
+            this.LoadConfigurationButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoadConfigurationButton.Name = "LoadConfigurationButton";
-            this.LoadConfigurationButton.Size = new System.Drawing.Size(111, 23);
+            this.LoadConfigurationButton.Size = new System.Drawing.Size(148, 28);
             this.LoadConfigurationButton.TabIndex = 9;
             this.LoadConfigurationButton.Text = "Load Configuration";
             this.LoadConfigurationButton.UseVisualStyleBackColor = true;
@@ -108,26 +114,28 @@
             // 
             // Stop
             // 
-            this.Stop.Location = new System.Drawing.Point(223, 268);
+            this.Stop.Location = new System.Drawing.Point(297, 330);
+            this.Stop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(75, 23);
+            this.Stop.Size = new System.Drawing.Size(100, 28);
             this.Stop.TabIndex = 10;
             this.Stop.Text = "Stop";
             this.Stop.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 323);
+            this.ClientSize = new System.Drawing.Size(707, 398);
             this.Controls.Add(this.Stop);
             this.Controls.Add(this.LoadConfigurationButton);
             this.Controls.Add(this.Logs);
             this.Controls.Add(this.SendToAll);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Start);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "NetworkManager";
             this.ResumeLayout(false);
             this.PerformLayout();
 
