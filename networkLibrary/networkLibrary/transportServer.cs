@@ -53,7 +53,7 @@ namespace networkLibrary
                    // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
                    // args.ID = clientSocket;
 
-                    //this.clientSocket.Add(clientSocket);
+                    this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
 
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));
@@ -151,11 +151,24 @@ namespace networkLibrary
 
         }
 
+        public void endConnection(TcpClient client)
+        {
+            try
+            {
+                client.GetStream().Close();
+                client.Close();
+                clientSocket.Remove(client);
+            }
+            catch
+            {
+                Console.WriteLine("Problems with disconnecting clients from cloud");
+            }
+        }
 
         public void stopServer()
         {
 
-          /*  foreach (TcpClient client in clientSocket)
+            foreach (TcpClient client in clientSocket)
             {
                 try
                 {
@@ -168,7 +181,7 @@ namespace networkLibrary
                     Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
             }
-           */
+           
            
             int numberofclientSockets = clientSocket.Count;
             for (int x = 0; x < numberofclientSockets;x++ )

@@ -135,9 +135,17 @@ namespace Cloud
         }
 
         public void stopServer(){
+            foreach(KeyValuePair<string, TcpClient> entry in clientSockets)
+            {
+                server.endConnection(entry.Value);
+            }
+
             server.OnNewClientRequest -= reqListener;
             server.OnNewMessageRecived -= msgListener;
+            reqListener=null;
+            msgListener=null;
             server.stopServer();
+            server = null;
         }
 
         private void addLog(Grid log, string message, int logType)

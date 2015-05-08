@@ -13,6 +13,7 @@ namespace NetworkNode
 {
     class Node
     {
+        private MainWindow mainWindow;
         private Grid logs;
         private ListView links;
         private Config conf;
@@ -24,6 +25,9 @@ namespace NetworkNode
         private SwitchingBox switchTable;
 
         private List<Link> linkList;
+
+        public transportClient.NewMsgHandler newMessageHandler { get; set; }
+        public transportClient.NewMsgHandler newOrderHandler { get; set; }
         
         string ManagerIP { get; set; }
         string ManagerPort { get; set; }
@@ -33,10 +37,12 @@ namespace NetworkNode
         public List<string> portsIn { get; set; }
         public List<string> portsOut { get; set; }
 
-        public Node(Grid logs, ListView links)
+        public Node(Grid logs, ListView links, MainWindow mainWindow)
         {
             this.logs = logs;
             this.links = links;
+            this.mainWindow = mainWindow;
+
             rIndex = Grid.GetRow(logs);
             switchTable = new SwitchingBox();
             linkList = new List<Link>();
@@ -81,6 +87,7 @@ namespace NetworkNode
                 this.ManagerPort = conf.config[4];
                 this.portsIn = conf.portsIn;
                 this.portsOut = conf.portsOut;
+                this.mainWindow.Title = this.NodeId; 
                 addLog(logs, networkLibrary.Constants.CONFIG_OK, networkLibrary.Constants.LOG_INFO);
             }
             catch(Exception e)
@@ -95,10 +102,12 @@ namespace NetworkNode
             try
             {
                 cloud = new transportClient(CloudIP, CloudPort);
-                cloud.OnNewMessageRecived += new transportClient.NewMsgHandler(newMessageRecived);
+                newMessageHandler = new transportClient.NewMsgHandler(newMessageRecived);
+                cloud.OnNewMessageRecived += newMessageHandler;
 
                 manager = new transportClient(ManagerIP, ManagerPort);
-                manager.OnNewMessageRecived += new transportClient.NewMsgHandler(newOrderRecived);
+                newOrderHandler = new transportClient.NewMsgHandler(newOrderRecived);
+                manager.OnNewMessageRecived += newOrderHandler;
 
                 cloud.sendMessage(this.NodeId+"#");
 
@@ -110,6 +119,8 @@ namespace NetworkNode
                 addLog(logs, Constants.SERVICE_START_ERROR, Constants.LOG_ERROR);
                 addLog(logs, Constants.CANNOT_CONNECT_TO_CLOUD, Constants.LOG_ERROR);
                 addLog(logs, Constants.CANNOT_CONNECT_TO_MANAGER, Constants.LOG_ERROR);
+
+                throw new Exception("zly start networknode");
             }
 
            /* if (cloud.isConnected() && manager.isConnected())
@@ -206,11 +217,19 @@ namespace NetworkNode
         }
         public void stopService()
         {
-           
-            cloud.stopService();
-            cloud = null;
-            manager.stopService();
-            manager = null;
+            if (cloud != null)
+            {
+                cloud.OnNewMessageRecived -= newMessageHandler;
+                manager.OnNewMessageRecived -= newOrderHandler;
+                newMessageHandler = null;
+                newOrderHandler = null;
+                cloud.stopService();
+                cloud = null;
+                manager.stopService();
+                manager = null;
+            }
         }
+
+
     }
 }

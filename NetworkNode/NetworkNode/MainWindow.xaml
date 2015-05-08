@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Unknown Network Node" Height="368.667" Width="382.463">
     <Grid Margin="0,0,2,0">
-        <Button Content="Start Service" HorizontalAlignment="Left" Height="24" Margin="10,28,0,0" VerticalAlignment="Top" Width="122" Click="Button_Click"/>
+        <Button x:Name="startButton" Content="Start Service" HorizontalAlignment="Left" Height="24" Margin="10,28,0,0" VerticalAlignment="Top" Width="122" Click="Button_Click"/>
         <TabControl HorizontalAlignment="Left" Height="272" Margin="10,57,0,0" VerticalAlignment="Top" Width="358">
             <TabItem Header="Log">
                 <Grid Background="#FFE5E5E5">

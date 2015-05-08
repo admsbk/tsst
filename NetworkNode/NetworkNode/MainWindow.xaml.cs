@@ -29,14 +29,23 @@ namespace NetworkNode
         public MainWindow()
         {
             InitializeComponent();
-            node = new Node(this.log, this.links);
+            node = new Node(this.log, this.links, this);
             setGraphics();
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            node.startService();
+            try
+            {
+                node.startService();
+                this.startButton.IsEnabled = false;
+            }
+
+            catch
+            {
+
+            }
         }
 
         private void Load_Conf_Click(object sender, EventArgs e)
