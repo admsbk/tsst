@@ -72,10 +72,16 @@ namespace NetworkManager
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (NetManager != null)
-                NetManager.stopManager();
+            base.OnFormClosing(e);
+
+                    if (NetManager != null)
+                        NetManager.stopManager();
+                    //Environment.Exit(0);
+
+
+            
 
         }
 
@@ -102,7 +108,17 @@ namespace NetworkManager
 
         private void Stop_Click(object sender, EventArgs e)
         {
-
+            if (NetManager != null)
+            {
+                try
+                {
+                    NetManager.stopManager();
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.StackTrace);
+                }
+            }
         }
 
     }
