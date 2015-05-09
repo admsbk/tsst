@@ -16,7 +16,7 @@ namespace NetworkManager
     {
         public transportServer server;
         //private ListView nodes;
-        //private List<TcpClient> clientSockets = new List<TcpClient>();
+        private transportServer.NewClientHandler clientHandler { get; set; }
         private CommandVerifier commandVerifier;
         private Logs logs;
 
@@ -31,6 +31,8 @@ namespace NetworkManager
             try
             {
                 server = new transportServer(port);
+                clientHandler = new transportServer.NewClientHandler(newClientRequest);
+                server.OnNewClientRequest += clientHandler;
                 logs.addLogFromOutside(Constants.MANAGER_STARTED, true, Constants.INFO);
                 return true;
             }
@@ -39,23 +41,31 @@ namespace NetworkManager
                 return false;
             }
             
+        }
 
-
-
+        private void newClientRequest(object a, ClientArgs e)
+        {
+            logs.addLogFromOutside(Constants.NEW_CLIENT_LOG + " NetworkNode", true, Constants.LOG_INFO);
         }
 
         public void stopManager()
         {
             try
             {
-                server.serverSocket.Stop();
-                server.serverSocket = null;
-                server.serverThread = null;
+                foreach (TcpClient client in server.clientSocket)
+                {
+                    server.endConnection(client);
+                }
+
+                server.OnNewClientRequest -= clientHandler;
+                clientHandler = null;
+                server.stopServer();
+                server = null;
             }
             catch
-                {
-
-                }
+            {
+                logs.addLogFromOutside("Problems with disconnecting", true, Constants.LOG_ERROR);
+            }
         }
         public bool sendCommandToAll(string command)
         {
@@ -71,10 +81,11 @@ namespace NetworkManager
                        logs.addLogFromOutside(commandVerifier.getErrorMessage(), false, 3);
 
                    }
-                   
-                   
+
+                   logs.addLogFromOutside("Sending message: " + command, true, Constants.LOG_INFO);
                    foreach (TcpClient client in server.clientSocket)
                    {
+                       
                        server.sendMessage(client, command);
                    }
                    returned = true;
@@ -82,5 +93,7 @@ namespace NetworkManager
             }
             return returned;
         }
+
+
     }
 }

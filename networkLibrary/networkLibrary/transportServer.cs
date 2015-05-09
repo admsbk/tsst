@@ -51,7 +51,8 @@ namespace networkLibrary
                     ClientArgs args = new ClientArgs();
 
                    // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
-                   // args.ID = clientSocket;
+                    
+                    args.ID = clientSocket;
 
                     this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
@@ -107,7 +108,6 @@ namespace networkLibrary
                 {
                     clientSocket.GetStream().Close();
                     clientSocket.Close();
-                    //clientSockets.Remove(clientSocket);
                 }
                 catch
                 {
@@ -235,7 +235,7 @@ namespace networkLibrary
                     }
                     else
                     {
-                        stream.Close();
+                        //stream.Close();
                         clientSocket.Remove(client);
                         throw new Exception("Null Socket Exception");
                     }

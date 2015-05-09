@@ -49,7 +49,8 @@ namespace NetworkNode
         }
 
         private void newOrderRecived(object myObject, MessageArgs myArgs)
-        {    
+        {
+            //addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
             string[] check = myArgs.Message.Split('%');
             if (check[0] == NodeId)
             {
@@ -62,7 +63,8 @@ namespace NetworkNode
         {
             //tutaj coś by trzeba wykminić
             //addLog(logs, "Yout are: "+myArgs.Message, Constants.LOG_INFO);
-            string forwarded = switchTable.forwardMessage(myArgs.Message);
+            addLog(logs, Constants.NEW_MSG_RECIVED + " " + myArgs.Message, Constants.LOG_INFO);
+            string forwarded = switchTable.forwardMessage(myArgs.Message.Split('%')[1]);
             if (forwarded != null) 
             { 
                 cloud.sendMessage(forwarded);

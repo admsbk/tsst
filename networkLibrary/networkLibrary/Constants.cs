@@ -17,7 +17,7 @@ namespace networkLibrary
         public const string CANNOT_CONNECT_TO_CLOUD = "Cannot connect to cloud";
         public const string CANNOT_CONNECT_TO_MANAGER = "Cannot connect to Network Manager";
         public const string UNREACHABLE_DST = "Unreachable component:";
-
+        public const string ALREADY_CONNECTED = "Component connected before";
 
         public const int LOG_ERROR = 0;
         public const int LOG_INFO = 1;

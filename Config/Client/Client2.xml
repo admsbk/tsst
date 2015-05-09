@@ -2,10 +2,10 @@
 <Client Id="ClientNode2" CloudHost="localhost" CloudPort="3333" Name="Macius">
 <Ports>
     <InputPorts>
-      	<Port Id="CI1" />
+      	<Port Id="IP1" />
     </InputPorts>
     <OutputPorts>
-      	<Port Id="CO1" />
+      	<Port Id="OP1" />
     </OutputPorts>
   </Ports>
 </Client>

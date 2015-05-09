@@ -19,7 +19,6 @@ namespace ClientNode
         private TextBlock status;
         private int messageNumber = 0;
         private int rIndex;
-        private string title;
         private MainWindow mainWindow;
         private string name { get; set; }
         private string nodeName { get; set; }
@@ -94,12 +93,21 @@ namespace ClientNode
         }
         private void newMessageRecived(object a, MessageArgs e)
         {
-            addChatMessage(e.Message, Constants.RIGHT);
+            string message;
+            try
+            {
+                message = e.Message.Split('&')[1];
+                addChatMessage(message, Constants.RIGHT);
+            }
+            catch
+            {
+                addChatMessage(e.Message, Constants.RIGHT);
+            }
         }
 
         public void sendMessage(string msg)
         {
-            client.sendMessage(this.nodeName+"%"+this.portsOut[0]+"&"+msg);
+            client.sendMessage(this.portsOut[0]+"&"+msg);
             addChatMessage(msg, Constants.LEFT);
         }
 
@@ -155,10 +163,17 @@ namespace ClientNode
 
         public void stopService()
         {
-            client.OnNewMessageRecived -= messageHandler;
-            messageHandler = null;
-            client.stopService();
-            client = null;
+            try
+            {
+                client.OnNewMessageRecived -= messageHandler;
+                messageHandler = null;
+                client.stopService();
+                client = null;
+            }
+            catch
+            {
+                
+            }
         }
 
 

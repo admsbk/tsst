@@ -40,7 +40,7 @@
             <TabItem x:Name="logTabView" Header="Logs">
                 <Grid Background="#FFE5E5E5">
                     <ScrollViewer x:Name="scroll" MaxHeight="239" VerticalAlignment="Top" IsEnabled="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="234">
-                        <Grid x:Name="logList" Width="293">
+                        <Grid x:Name="logList" Width="343">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
