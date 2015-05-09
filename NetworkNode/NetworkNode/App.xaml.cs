@@ -13,5 +13,17 @@ namespace NetworkNode
     /// </summary>
     public partial class App : Application
     {
+        public static string partialPathToConfig;
+        void App_Startup(object sender, StartupEventArgs e)
+        {
+            try
+            {
+                partialPathToConfig = Environment.GetCommandLineArgs()[1];
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

@@ -88,7 +88,7 @@ namespace ClientNode
             catch(Exception e)
             {
                 Console.WriteLine(e.StackTrace);
-                displayStatusMessage(Constants.CONFIG_ERROR + "...", Constants.LOG_ERROR);
+                displayStatusMessage(" from "+path + "...", Constants.LOG_ERROR);
             }
         }
         private void newMessageRecived(object a, MessageArgs e)

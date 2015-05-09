@@ -79,6 +79,7 @@ namespace NetworkNode
 
         public void readConfig(string pathToConfig)
         {
+            addLog(logs, pathToConfig, Constants.LOG_INFO);
             try
             {
                 conf = new Config(pathToConfig, Constants.node);
@@ -94,7 +95,7 @@ namespace NetworkNode
             }
             catch(Exception e)
             {
-                addLog(logs, networkLibrary.Constants.CONFIG_ERROR, networkLibrary.Constants.LOG_INFO);
+                addLog(logs, networkLibrary.Constants.CONFIG_ERROR, networkLibrary.Constants.LOG_ERROR);
                 System.Console.WriteLine(e);
             }
         }
