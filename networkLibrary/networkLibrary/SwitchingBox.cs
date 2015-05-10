@@ -52,10 +52,8 @@ namespace networkLibrary
 
         public void removeAllLinks()
         {
-            foreach (KeyValuePair<string, string> entry in this.SwitchingTable)
-            {
-                this.SwitchingTable.Remove(entry.Key);
-            }
+
+            this.SwitchingTable.Clear();
         }
     }
 }

@@ -54,8 +54,14 @@ namespace NetworkNode
             string[] check = myArgs.Message.Split('%');
             if (check[0] == NodeId)
             {
-                parseOrder(check[1]+"%"+check[2]+"%"+check[3]);
                 addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
+                if (check[1] == Constants.SET_LINK)
+                    parseOrder(check[1] + "%" + check[2] + "%" + check[3]);
+                else if (check[1] == Constants.DELETE_LINK)
+                    parseOrder(check[1] + "%" + check[2]);
+                else if(check[1]==Constants.SHOW_LINK)
+                    parseOrder(check[1] + "%" + check[2]);
+                
             }            
         }
 
@@ -164,8 +170,12 @@ namespace NetworkNode
                     {
                         for (int i = links.Items.Count - 1; i >= 0; i--)
                         {
-                            links.Items.Remove(i);
-                            linkList.RemoveAt(i);
+
+                            Application.Current.Dispatcher.Invoke((Action)(() =>
+                            {
+                                links.Items.Remove(links.Items[i]);
+                                linkList.RemoveAt(i);
+                            }));
                         }
                         
                         switchTable.removeAllLinks();

@@ -19,6 +19,9 @@ namespace networkLibrary
         public delegate void NewMsgHandler(object myObject, MessageArgs myArgs);
         public event NewMsgHandler OnNewMessageRecived;
 
+        public delegate void NewSignalization(object myObject, MessageArgs myArgs);
+        public event NewSignalization OnNewSignalization;
+
         public transportClient(string ip, string port)
         {
             this.encoder = new ASCIIEncoding();
@@ -65,7 +68,6 @@ namespace networkLibrary
                 }
                 catch
                 {
-                    Console.WriteLine("fdsabkijsdfa");
                     break;
                 }
 
@@ -78,13 +80,33 @@ namespace networkLibrary
                 MessageArgs myArgs = new MessageArgs(signal);
                 OnNewMessageRecived(this, myArgs);
             }
+            if (client != null)
+            {
+                try
+                {
+                    var args = new MessageArgs("Disconnected from cloud");
+                    OnNewSignalization(this, args);
+
+                    client.GetStream().Close();
+                    client.Close();
+                    client = null;
+                    
+                }
+                catch (Exception e )
+                {
+                    Console.WriteLine(e.StackTrace);
+                    Console.WriteLine("Exception in disconnecting from cloud");
+                }
+            }
+
         }
 
         public void sendMessage(string msg)
         {
-            byte[] buffer = encoder.GetBytes(msg);
-            stream.Write(buffer, 0, buffer.Length);
-            stream.Flush();
+                byte[] buffer = encoder.GetBytes(msg);
+                stream.Write(buffer, 0, buffer.Length);
+                stream.Flush();
+        
         }
 
         public bool isConnected()
@@ -98,6 +120,7 @@ namespace networkLibrary
                 return false;
             }
         }
+
 
         public void stopService()
         {

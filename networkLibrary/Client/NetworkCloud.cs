@@ -70,16 +70,7 @@ namespace Cloud
         }
         private void newClientRequest(object a, ClientArgs e)
         {
-            /*
-            //addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.NodeName, Constants.LOG_INFO);
-            //sockests.Add(e.ID);
-            //e.NodeID = "Client:" + sockests.IndexOf(e.ID);
-            Application.Current.Dispatcher.Invoke((Action)(() =>
-                {
-                    this.nodes.Items.Add(e);
-                    
-                }));
-            //server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));*/
+
         }
 
         private void newMessageRecived(object a, MessageArgs e)
@@ -98,7 +89,7 @@ namespace Cloud
                     string forwarded = switchBox.forwardMessage(getSenderId+"%"+e.Message);
                     string[] getNextNode = forwarded.Split('%');
                     server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
-                    addLog(this.logs, Constants.FORWARD_MESSAGE + " \n" + forwarded, Constants.LOG_INFO);
+                    addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
                 }
                 catch
                 {

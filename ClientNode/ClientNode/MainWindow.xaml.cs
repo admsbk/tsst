@@ -38,7 +38,7 @@ namespace ClientNode
             }
 
         }
-
+       
         private void setChat()
         {
             DispatcherTimer timer = new DispatcherTimer();
