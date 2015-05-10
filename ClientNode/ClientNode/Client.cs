@@ -29,6 +29,7 @@ namespace ClientNode
         public List<Port> portsIn { get; set; }
         public List<Port> portsOut { get; set; }
         private transportClient.NewMsgHandler messageHandler { get; set; }
+        private transportClient.NewSignalization signHandler { get; set; }
 
 
         public Client(Grid chat, TextBlock status, MainWindow mainWindow)
@@ -48,8 +49,10 @@ namespace ClientNode
             try
             {
                 messageHandler = new transportClient.NewMsgHandler(newMessageRecived);
+                signHandler = new transportClient.NewSignalization(newSignalization);
                 client = new transportClient(CloudIP, CloudPort);
                 client.OnNewMessageRecived += messageHandler;
+                client.OnNewSignalization += signHandler;
                 client.sendMessage(nodeName + "#");
                 displayStatusMessage(Constants.SERVICE_START_OK, Constants.LOG_INFO);
             }
@@ -63,7 +66,7 @@ namespace ClientNode
 
         public bool isStarted()
         {
-            if (client != null && client.isConnected())
+            if (client != null )
             {
                 return true;
             }
@@ -121,15 +124,22 @@ namespace ClientNode
             catch(Exception e)
             {
                 Console.WriteLine(e.StackTrace);
+                displayStatusMessage(Constants.CONFIG_ERROR + "...", Constants.LOG_ERROR);
+                displayStatusMessage(" from "+path + "...", Constants.LOG_ERROR);
 
                 displayStatusMessage(Constants.CONFIG_ERROR + "...", Constants.LOG_ERROR);
             }
+        }
+        private void newSignalization(object a, MessageArgs e)
+        {
+            displayStatusMessage(e.Message, Constants.LOG_ERROR);
         }
         private void newMessageRecived(object a, MessageArgs e)
         {
             string message;
             try
             {
+                displayStatusMessage(e.Message, Constants.LOG_ERROR);
                 message = e.Message.Split('&')[1];
                 addChatMessage(message, Constants.RIGHT);
             }
@@ -141,8 +151,12 @@ namespace ClientNode
 
         public void sendMessage(string msg)
         {
-            client.sendMessage(this.portsOut[0]+"&"+msg);
-            addChatMessage(msg, Constants.LEFT);
+            try
+            {
+                client.sendMessage(this.portsOut[0] + "&" + msg);
+                addChatMessage(msg, Constants.LEFT);
+            }
+            catch { }
         }
 
         private void displayStatusMessage(string message, int type)
@@ -159,8 +173,14 @@ namespace ClientNode
                     break;
             }
 
-            status.Text = message;
-            status.Foreground = color;
+            this.status.Dispatcher.Invoke(
+                System.Windows.Threading.DispatcherPriority.Normal,
+                new Action(() =>
+                {
+                    status.Text = message;
+                    status.Foreground = color;
+                })
+            );
 
         }
 
@@ -200,7 +220,9 @@ namespace ClientNode
             try
             {
                 client.OnNewMessageRecived -= messageHandler;
+                client.OnNewSignalization -= signHandler;
                 messageHandler = null;
+                signHandler = null;
                 client.stopService();
                 client = null;
             }

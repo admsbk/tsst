@@ -21,12 +21,26 @@ namespace ClientNode
     /// </summary>
     public partial class MainWindow : Window
     {
+        string pathToConfig;
         Client client;
         public MainWindow()
         {
             InitializeComponent();
             client = new Client(this.chat, this.txtBlock, this);
+            setChat();
 
+            string conf = ClientNode.App.partialPathToConfig;
+
+            if (conf != null)
+            {
+                pathToConfig = @""+conf;
+                client.readConfig(pathToConfig);
+            }
+
+        }
+       
+        private void setChat()
+        {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 2);
             timer.Tick += ((sender, e) =>

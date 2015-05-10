@@ -112,10 +112,7 @@ namespace networkLibrary
                 catch
                 {
                 }
-            }
-
-
-           
+            } 
         }
 
         public delegate void NewMsgHandler(object myObject, MessageArgs myArgs);
@@ -123,20 +120,6 @@ namespace networkLibrary
 
         public delegate void NewClientHandler(object myObject, ClientArgs myArgs);
         public event NewClientHandler OnNewClientRequest;
-
-        private bool getClientName(TcpClient client, string msg)
-        {
-            if (msg.Contains("//NAME// "))
-            {
-                string[] tmp = msg.Split(' ');
-                //clientSockets[client] = tmp[1];
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public bool isStarted()
         {

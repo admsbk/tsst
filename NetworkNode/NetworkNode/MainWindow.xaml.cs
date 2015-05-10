@@ -29,8 +29,16 @@ namespace NetworkNode
         public MainWindow()
         {
             InitializeComponent();
+            string conf = NetworkNode.App.partialPathToConfig;
             node = new Node(this.log, this.links, this);
             setGraphics();
+
+            if (conf != null)
+            {
+                pathToConfig = @"" + conf;
+                node.readConfig(pathToConfig);
+            }
+
 
         }
 
@@ -38,6 +46,7 @@ namespace NetworkNode
         {
             try
             {
+                
                 node.startService();
                 this.startButton.IsEnabled = false;
             }

@@ -59,5 +59,21 @@ namespace Cloud.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;Cloud Id = &quot;NetworkCloud&quot; CloudHost=&quot;localhost&quot; CloudPort=&quot;3333&quot; &gt;
+        ///	&lt;Topology&gt;
+        ///		&lt;Link Id=&quot;Link1&quot; SrcId=&quot;ClientNode1&quot; DstId=&quot;NetworkNode1&quot; SrcPortId=&quot;OP1&quot; DstPortId=&quot;IP1&quot; /&gt; 
+        ///		&lt;Link Id=&quot;Link2&quot; SrcId=&quot;ClientNode2&quot; DstId=&quot;NetworkNode2&quot; SrcPortId=&quot;OP1&quot; DstPortId=&quot;IP1&quot; /&gt;
+        ///		&lt;Link Id=&quot;Link3&quot; SrcId=&quot;ClientNode3&quot; DstId=&quot;NetworkNode3&quot; SrcPortId=&quot;OP1&quot; DstPortId=&quot;IP1&quot; /&gt;
+        ///		 
+        ///		&lt;Link Id=&quot;Link4&quot; SrcId=&quot;NetworkNode1&quot; DstId=&quot;ClientNode1&quot; SrcPortId=&quot;OP1&quot; DstPortId=&quot;IP1&quot; /&gt;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string NetworkTopology {
+            get {
+                return ResourceManager.GetString("NetworkTopology", resourceCulture);
+            }
+        }
     }
 }
