@@ -16,7 +16,9 @@ namespace networkLibrary
         public TcpListener serverSocket;
         public Thread serverThread;
         //private Dictionary<TcpClient, string> clientSockets = new Dictionary<TcpClient, string>();
-        private List<TcpClient> clientSocket;
+        public List<TcpClient> clientSocket;
+
+
 
         public transportServer(int port)
         {
@@ -51,7 +53,7 @@ namespace networkLibrary
                    // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
                    // args.ID = clientSocket;
 
-                    //this.clientSocket.Add(clientSocket);
+                    this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
 
                     Thread clientThread = new Thread(new ParameterizedThreadStart(ListenForMessage));

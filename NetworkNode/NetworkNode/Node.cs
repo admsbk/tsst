@@ -47,6 +47,7 @@ namespace NetworkNode
             string[] check = myArgs.Message.Split('%');
             if (check[0] == NodeId)
             {
+                
                 parseOrder(check[1]+"%"+check[2]+"%"+check[3]);
                 addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
             }            
@@ -139,7 +140,14 @@ namespace NetworkNode
                     switchTable.addLink(parsed[1], parsed[2]);
                     Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed[1], parsed[2]);
                     linkList.Add(newLink);
-                    this.links.Items.Add(newLink);
+                    
+
+                    Application.Current.Dispatcher.Invoke((Action)(() =>
+                    {
+                        this.links.Items.Add(newLink);
+
+                    }));
+
                     break;
                 case Constants.DELETE_LINK:
                     if (parsed[1] == "*")
