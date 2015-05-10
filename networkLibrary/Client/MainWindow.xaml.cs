@@ -1,4 +1,5 @@
 ﻿using networkLibrary;
+using Cloud.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Windows.Threading;
+using System.Threading;
 
 namespace Cloud
 {
@@ -31,20 +33,39 @@ namespace Cloud
             InitializeComponent();
             setGraphics();
             cloud = new NetworkCloud(this.links, this.nodes, this.logList);
+            var path = @"Config/NetworkTopology.xml";
+
+
+            string conf = Cloud.App.partialPathToConfig;
+
+            if (conf != null)
+            {
+                pathToConfig = @"" + conf;
+                cloud.readConfig(pathToConfig);
+                startService();
+            }
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try{
+            startService();
+
+        }
+        private void startService()
+        {
+
+            try
+            {
                 cloud.startService();
                 this.StartButton.IsEnabled = false;
             }
-            catch{
+            catch
+            {
                 Console.WriteLine("unable to start cloud");
             }
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try

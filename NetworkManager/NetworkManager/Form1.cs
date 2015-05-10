@@ -16,7 +16,7 @@ namespace NetworkManager
         private List<string> previousCommands;
         private int commandListPos;
         private Configuration config;
-        
+        private bool confLoaded = false;
 
         private Manager NetManager;
         private Logs logs;
@@ -31,15 +31,24 @@ namespace NetworkManager
             commandListPos = 0;
             logs = new Logs(this.Logs);
             config = new Configuration(this.logs);
+            Start.Enabled = true;
+
+            if (confLoaded == false)
+            {
+                var path = @"Config/ManagerConfig.xml";
+                config.loadConfiguration(path);
+                afterConfiguration();
+            }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-                if(NetManager.startManager(config.ManagerPort))
-                    afterStarted();
 
+
+            if (NetManager.startManager(config.ManagerPort))
+                afterStarted();
+            
         }
 
         private void afterStarted()
@@ -72,11 +81,12 @@ namespace NetworkManager
 
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (NetManager != null)
-                NetManager.stopManager();
-
+            NetManager.stopManager();
+            base.OnFormClosing(e);
+            
+                
         }
 
         private void Logs_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,11 +98,7 @@ namespace NetworkManager
         {
             openFileDialog.ShowDialog();
         }
-        private void openFileDialog_FileOk(object sender, CancelEventArgs e)
-        {
-            config.loadConfiguration(openFileDialog.FileName);
-                afterConfiguration();
-        }
+
 
         private void openFileDialog_FileOk_1(object sender, CancelEventArgs e)
         {
@@ -102,7 +108,17 @@ namespace NetworkManager
 
         private void Stop_Click(object sender, EventArgs e)
         {
-
+            if (NetManager != null)
+            {
+                try
+                {
+                    NetManager.stopManager();
+                }
+                catch (Exception exc)
+                {
+                    Console.WriteLine(exc.StackTrace);
+                }
+            }
         }
 
     }

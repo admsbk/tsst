@@ -29,14 +29,32 @@ namespace NetworkNode
         public MainWindow()
         {
             InitializeComponent();
-            node = new Node(this.log, this.links);
+            string conf = NetworkNode.App.partialPathToConfig;
+            node = new Node(this.log, this.links, this);
             setGraphics();
+
+            if (conf != null)
+            {
+                pathToConfig = @"" + conf;
+                node.readConfig(pathToConfig);
+            }
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            node.startService();
+            try
+            {
+                
+                node.startService();
+                this.startButton.IsEnabled = false;
+            }
+
+            catch
+            {
+
+            }
         }
 
         private void Load_Conf_Click(object sender, EventArgs e)
@@ -76,6 +94,11 @@ namespace NetworkNode
                 }
             });
             timer.Start();
+        }
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+
+            node.stopService();
         }
     }
 }

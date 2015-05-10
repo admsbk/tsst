@@ -51,7 +51,8 @@ namespace networkLibrary
                     ClientArgs args = new ClientArgs();
 
                    // args.NodeName = networkLibrary.Constants.NEW_CLIENT_LOG;
-                   // args.ID = clientSocket;
+                    
+                    args.ID = clientSocket;
 
                     this.clientSocket.Add(clientSocket);
                     OnNewClientRequest(this, args);
@@ -107,15 +108,11 @@ namespace networkLibrary
                 {
                     clientSocket.GetStream().Close();
                     clientSocket.Close();
-                    //clientSockets.Remove(clientSocket);
                 }
                 catch
                 {
                 }
-            }
-
-
-           
+            } 
         }
 
         public delegate void NewMsgHandler(object myObject, MessageArgs myArgs);
@@ -123,20 +120,6 @@ namespace networkLibrary
 
         public delegate void NewClientHandler(object myObject, ClientArgs myArgs);
         public event NewClientHandler OnNewClientRequest;
-
-        private bool getClientName(TcpClient client, string msg)
-        {
-            if (msg.Contains("//NAME// "))
-            {
-                string[] tmp = msg.Split(' ');
-                //clientSockets[client] = tmp[1];
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public bool isStarted()
         {
@@ -151,11 +134,23 @@ namespace networkLibrary
 
         }
 
+        public void endConnection(TcpClient client)
+        {
+            try
+            {
+                client.GetStream().Close();
+                client.Close();
+                clientSocket.Remove(client);
+            }
+            catch
+            {
+                Console.WriteLine("Problems with disconnecting clients from cloud");
+            }
+        }
 
         public void stopServer()
-        {
-
-          /*  foreach (TcpClient client in clientSocket)
+        {          
+            foreach (TcpClient client in clientSocket)
             {
                 try
                 {
@@ -168,36 +163,22 @@ namespace networkLibrary
                     Console.WriteLine("Problems with disconnecting clients from cloud");
                 }
             }
-           */
-            int numberofclientSockets = clientSocket.Count;
-            for (int x = 0; x < numberofclientSockets;x++ )
+
+            if (serverSocket != null)
             {
                 try
                 {
+                    serverSocket.Stop();
                     
-                    clientSocket.ElementAt<TcpClient>(x).GetStream().Close();
-                    clientSocket.ElementAt<TcpClient>(x).Close();
-                    clientSocket.Remove(clientSocket.ElementAt<TcpClient>(x));
+                    if (serverThread.IsAlive)
+                    { serverThread.Abort(); }
                 }
                 catch
                 {
-                    Console.WriteLine("Problems with disconnecting clients from cloud");
+                    Console.WriteLine("Unable to stop cloud");
                 }
-
             }
-
-
-                if (serverSocket != null)
-                {
-                    try
-                    {
-                        serverSocket.Stop();
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Unable to stop cloud");
-                    }
-                }
+                    
             serverSocket = null;
             serverThread = null;
         }
@@ -219,7 +200,7 @@ namespace networkLibrary
                     }
                     else
                     {
-                        stream.Close();
+                        //stream.Close();
                         clientSocket.Remove(client);
                         throw new Exception("Null Socket Exception");
                     }

@@ -70,39 +70,46 @@ namespace Cloud
         }
         private void newClientRequest(object a, ClientArgs e)
         {
-            /*
-            //addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.NodeName, Constants.LOG_INFO);
-            //sockests.Add(e.ID);
-            //e.NodeID = "Client:" + sockests.IndexOf(e.ID);
-            Application.Current.Dispatcher.Invoke((Action)(() =>
-                {
-                    this.nodes.Items.Add(e);
-                    
-                }));
-            //server.sendMessage(e.ID, "Client"+sockests.IndexOf(e.ID));*/
+
         }
 
         private void newMessageRecived(object a, MessageArgs e)
         {
+            
             if (e.Message.Split('#').Length == 1)
             {
-                string[] getSenderId = e.Message.Split('%');
-                string[] getNextNode = switchBox.forwardMessage(e.Message).Split('%');
+                //string[] getSenderId = e.Message.Split('%');
+                string getSenderId = clientSockets.FirstOrDefault(x => x.Value == e.ID).Key;
+                addLog(this.logs, Constants.NEW_MSG_RECIVED + " from " + getSenderId +" " + e.Message, Constants.LOG_INFO);
+                
+
+                
                 try
                 {
-                    server.sendMessage(clientSockets[getNextNode[0]], getSenderId[0] + "%" + getNextNode[1]);
+                    string forwarded = switchBox.forwardMessage(getSenderId+"%"+e.Message);
+                    string[] getNextNode = forwarded.Split('%');
+                    server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
+                    addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
                 }
                 catch
                 {
-                    addLog(this.logs, Constants.UNREACHABLE_DST+ " " + getNextNode[0], Constants.LOG_ERROR);
+                    addLog(this.logs, Constants.UNREACHABLE_DST + " " + switchBox.forwardMessage(getSenderId + "%" + e.Message), Constants.LOG_ERROR);
                 }
-                addLog(this.logs, Constants.NEW_MSG_RECIVED + " " + e.Message, Constants.LOG_INFO);
-                addLog(this.logs, Constants.FORWARD_MESSAGE + getNextNode[0], Constants.LOG_INFO);
+                
+                
             }
             else
             {
-                clientSockets.Add(e.Message.Split('#')[0], e.ID);
-                addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.Message.Split('#')[0], Constants.LOG_INFO);
+                try
+                {
+                    clientSockets.Add(e.Message.Split('#')[0], e.ID);
+                    addLog(this.logs, Constants.NEW_CLIENT_LOG + " " + e.Message.Split('#')[0], Constants.LOG_INFO);
+                }
+                catch
+                {
+                    addLog(this.logs, Constants.ALREADY_CONNECTED + " " + e.Message.Split('#')[0], Constants.LOG_ERROR);
+                }
+
             }
         }
 
@@ -135,9 +142,17 @@ namespace Cloud
         }
 
         public void stopServer(){
+            foreach(KeyValuePair<string, TcpClient> entry in clientSockets)
+            {
+                server.endConnection(entry.Value);
+            }
+
             server.OnNewClientRequest -= reqListener;
             server.OnNewMessageRecived -= msgListener;
+            reqListener=null;
+            msgListener=null;
             server.stopServer();
+            server = null;
         }
 
         private void addLog(Grid log, string message, int logType)

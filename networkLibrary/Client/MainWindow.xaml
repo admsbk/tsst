@@ -22,6 +22,17 @@
             </StatusBar.RenderTransform>
         </StatusBar>
         <TabControl HorizontalAlignment="Left" Height="264" Margin="10,7,0,0" VerticalAlignment="Top" Width="372" Grid.ColumnSpan="2">
+            <TabItem x:Name="logTabView" Header="Logs">
+                <Grid Background="#FFE5E5E5">
+                    <ScrollViewer x:Name="scroll" MaxHeight="239" VerticalAlignment="Top" IsEnabled="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="234">
+                        <Grid x:Name="logList" Width="343">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="282*"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
             <TabItem x:Name="linkListView" Header="Links">
                 <Grid Background="#FFE5E5E5">
                     <ListView x:Name="links" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="366" >
@@ -37,17 +48,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="logTabView" Header="Logs">
-                <Grid Background="#FFE5E5E5">
-                    <ScrollViewer x:Name="scroll" MaxHeight="239" VerticalAlignment="Top" IsEnabled="True" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="234">
-                        <Grid x:Name="logList" Width="293">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="282*"/>
-                            </Grid.ColumnDefinitions>
-                        </Grid>
-                    </ScrollViewer>
-                </Grid>
-            </TabItem>
+            
             <TabItem x:Name="ConnectedNodes" Header="Nodes">
                 <Grid Background="#FFE5E5E5">
                     <ListView x:Name="nodes" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="366" >
