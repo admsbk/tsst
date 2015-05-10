@@ -12,14 +12,16 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Header="Link">
+            <TabItem Header="Link" Height="22" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
-                    <ListView x:Name="links" HorizontalAlignment="Left" Height="244" VerticalAlignment="Top" Width="352">
+                    <ListView x:Name="links" HorizontalAlignment="Left" Height="244" VerticalAlignment="Top" Width="352" SelectionChanged="links_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="30" Header="ID" DisplayMemberBinding="{Binding ID}"/>
-                                <GridViewColumn Width="100" Header="Source" DisplayMemberBinding="{Binding src}"/>
-                                <GridViewColumn Width="100" Header="Destination" DisplayMemberBinding="{Binding dst}"/>
+                                <GridViewColumn Width="75" Header="SourcPort" DisplayMemberBinding="{Binding src}"/>
+                                <GridViewColumn Width="75" Header="SourceSlot" DisplayMemberBinding="{Binding srcSlot}"/>
+                                <GridViewColumn Width="75" Header="DestPort" DisplayMemberBinding="{Binding dst}"/>
+                                <GridViewColumn Width="75" Header="DestSlot" DisplayMemberBinding="{Binding dstSlot}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

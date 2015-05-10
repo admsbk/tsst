@@ -2,10 +2,15 @@
 <Client Id="ClientNode1" CloudHost="localhost" CloudPort="3333" Name="Adaś">
 <Ports>
     <InputPorts>
-      	<Port Id="IP1" />
+      	<Port Id="IP1.1" />
+		<Port Id="IP1.2" />
+		<Port Id="IP1.3" />
     </InputPorts>
     <OutputPorts>
-      	<Port Id="OP1" />
+      	<Port Id="OP1.1" />
+		<Port Id="OP1.2" />
+		<Port Id="OP1.3" />
+	
     </OutputPorts>
   </Ports>
 </Client>

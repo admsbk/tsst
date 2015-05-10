@@ -24,9 +24,12 @@ namespace ClientNode
         private string nodeName { get; set; }
         private string CloudIP { get; set; }
         private string CloudPort { get; set; }
-        private List<string> portsIn { get; set; }
-        private List<string> portsOut { get; set; }
+        public List<string> portsInTemp { get; set; }
+        public List<string> portsOutTemp { get; set; }
+        public List<Port> portsIn { get; set; }
+        public List<Port> portsOut { get; set; }
         private transportClient.NewMsgHandler messageHandler { get; set; }
+
 
         public Client(Grid chat, TextBlock status, MainWindow mainWindow)
         {
@@ -80,14 +83,45 @@ namespace ClientNode
                 this.CloudIP = conf.config[1];
                 this.CloudPort = conf.config[2];
                 this.name = conf.config[3];
-                this.portsIn = conf.portsIn;
-                this.portsOut = conf.portsOut;
+                this.portsInTemp = conf.portsIn;
+                this.portsOutTemp = conf.portsOut;
+
+                foreach (string portIn in portsInTemp)
+                {
+                    string[] portInfo = portIn.Split('.');
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(portIn);
+                    Console.WriteLine(portInfo[0]);
+                    Console.WriteLine(portInfo[1]);
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Console.WriteLine(".");
+                    Port tempPort = new Port(portInfo[0], portInfo[1]);
+                    portsIn.Add(tempPort);
+
+                }
+
+                foreach (string portOut in portsOutTemp)
+                {
+                    string[] portInfo = portOut.Split('.');
+                    Port tempPort = new Port(portInfo[0], portInfo[1]);
+                    portsOut.Add(tempPort);
+
+                }
+
                 mainWindow.Title = "Client " + this.name;
                 displayStatusMessage(Constants.CONFIG_OK, Constants.LOG_INFO);
             }
             catch(Exception e)
             {
                 Console.WriteLine(e.StackTrace);
+
                 displayStatusMessage(Constants.CONFIG_ERROR + "...", Constants.LOG_ERROR);
             }
         }

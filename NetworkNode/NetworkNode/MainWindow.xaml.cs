@@ -91,5 +91,10 @@ namespace NetworkNode
 
             node.stopService();
         }
+
+        private void links_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

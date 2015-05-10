@@ -34,8 +34,11 @@ namespace NetworkNode
         string CloudIP { get; set; }
         string CloudPort { get; set; }
         string NodeId { get; set; }
-        public List<string> portsIn { get; set; }
-        public List<string> portsOut { get; set; }
+        public List<string> portsInTemp { get; set; }
+        public List<string> portsOutTemp { get; set; }
+        public List<Port> portsIn { get; set; }
+        public List<Port> portsOut { get; set; }
+
 
         public Node(Grid logs, ListView links, MainWindow mainWindow)
         {
@@ -87,8 +90,25 @@ namespace NetworkNode
                 this.CloudPort = conf.config[2];
                 this.ManagerIP = conf.config[3];
                 this.ManagerPort = conf.config[4];
-                this.portsIn = conf.portsIn;
-                this.portsOut = conf.portsOut;
+                this.portsInTemp = conf.portsIn;
+                this.portsOutTemp = conf.portsOut;
+
+                foreach (string portIn in portsInTemp)
+                {
+                    string[] portInfo = portIn.Split('.');
+                    Port tempPort = new Port(portInfo[0],portInfo[1]);
+                    portsIn.Add(tempPort);
+                    tempPort = null;
+                }
+
+                foreach (string portOut in portsOutTemp)
+                {
+                    string[] portInfo = portOut.Split('.');
+                    Port tempPort = new Port(portInfo[0], portInfo[1]);
+                    portsOut.Add(tempPort);
+                    tempPort = null;
+                }
+                
                 this.mainWindow.Title = this.NodeId; 
                 addLog(logs, networkLibrary.Constants.CONFIG_OK, networkLibrary.Constants.LOG_INFO);
             }

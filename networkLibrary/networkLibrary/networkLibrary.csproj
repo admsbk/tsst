@@ -53,6 +53,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="EndPoint.cs" />
+    <Compile Include="Link.cs" />
     <Compile Include="MessageArgs.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
