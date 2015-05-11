@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Cloud Id = "NetworkCloud" CloudHost="localhost" CloudPort="3333" >
 	<Topology>
-		<Link Id="Link1" SrcId="ClientNode1" DstId="NetworkNode1" SrcPortId="OP1" DstPortId="IP1" /> 
-		<Link Id="Link2" SrcId="ClientNode2" DstId="NetworkNode2" SrcPortId="OP1" DstPortId="IP1" />
+		<Link Id="Link1" SrcId="ClientNode1" DstId="NetworkNode1" SrcPortId="OP1" DstPortId="CIP" /> 
+		<Link Id="Link2" SrcId="ClientNode2" DstId="NetworkNode2" SrcPortId="OP1" DstPortId="CIP" />
 		<Link Id="Link3" SrcId="ClientNode3" DstId="NetworkNode3" SrcPortId="OP1" DstPortId="IP1" />
 		 
-		<Link Id="Link4" SrcId="NetworkNode1" DstId="ClientNode1" SrcPortId="OP1" DstPortId="IP1" /> 
+		<Link Id="Link4" SrcId="NetworkNode1" DstId="ClientNode1" SrcPortId="COP" DstPortId="IP1" /> 
 		<Link Id="Link5" SrcId="NetworkNode1" DstId="NetworkNode2" SrcPortId="OP2" DstPortId="IP2" /> 
 		<Link Id="Link6" SrcId="NetworkNode1" DstId="NetworkNode3" SrcPortId="OP3" DstPortId="IP2" /> 
 
@@ -16,7 +16,7 @@
 		
 
 		<Link Id="Link10" SrcId="NetworkNode3" DstId="ClientNode3" SrcPortId="OP3" DstPortId="IP1" /> 
-		<Link Id="Link11" SrcId="NetworkNode2" DstId="ClientNode2" SrcPortId="OP3" DstPortId="IP1" /> 
+		<Link Id="Link11" SrcId="NetworkNode2" DstId="ClientNode2" SrcPortId="COP" DstPortId="IP1" /> 
  
 
 		

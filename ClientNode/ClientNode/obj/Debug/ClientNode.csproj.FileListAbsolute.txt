@@ -58,3 +58,18 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\ClientNode\ClientNode\obj
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache

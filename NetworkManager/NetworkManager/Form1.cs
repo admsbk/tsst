@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace NetworkManager
 {
@@ -26,6 +27,7 @@ namespace NetworkManager
             InitializeComponent();
             SendToAll.Enabled = false;
             Start.Enabled = false;
+            LoadCommandScript.Enabled = false;
 
             previousCommands = new List<string>();
             commandListPos = 0;
@@ -57,6 +59,7 @@ namespace NetworkManager
             Start.Enabled = false;
             SendToAll.Enabled = true;
             LoadConfigurationButton.Enabled = false;
+            LoadCommandScript.Enabled = true;
 
         }
         private void afterConfiguration()
@@ -119,6 +122,29 @@ namespace NetworkManager
                     Console.WriteLine(exc.StackTrace);
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            loadScript.ShowDialog();
+        }
+
+        private void loadScript_FileOk(object sender, EventArgs e)
+        {
+            string[] lines = System.IO.File.ReadAllLines(loadScript.FileName);
+            Thread scriptThread = new Thread(new ThreadStart(delegate
+            {
+                foreach (string line in lines)
+                {
+                    if (NetManager.sendCommandToAll(line))
+                    {
+                        previousCommands.Add(line);
+                        Thread.Sleep(200);
+                    }
+                }
+            }));
+            scriptThread.IsBackground = true;
+            scriptThread.Start();
         }
 
     }
