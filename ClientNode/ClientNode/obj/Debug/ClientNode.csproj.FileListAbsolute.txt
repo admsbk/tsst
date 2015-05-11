@@ -65,7 +65,6 @@ C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\Client
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
-C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
@@ -73,3 +72,18 @@ C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\Client
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.baml
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\MainWindow.g.cs
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\App.g.cs
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode_MarkupCompile.cache
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
+E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
