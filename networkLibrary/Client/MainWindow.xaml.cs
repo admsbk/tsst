@@ -42,6 +42,7 @@ namespace Cloud
             {
                 pathToConfig = @"" + conf;
                 cloud.readConfig(pathToConfig);
+                startService();
             }
 
 
@@ -49,17 +50,22 @@ namespace Cloud
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            startService();
 
-            try{
+        }
+        private void startService()
+        {
+
+            try
+            {
                 cloud.startService();
                 this.StartButton.IsEnabled = false;
             }
-            catch{
+            catch
+            {
                 Console.WriteLine("unable to start cloud");
             }
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             try

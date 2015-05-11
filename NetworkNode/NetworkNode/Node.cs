@@ -191,8 +191,17 @@ namespace NetworkNode
             switch (parsed[0])
             {
                 case Constants.SET_LINK:
+<<<<<<< HEAD
 
                     if ((ifContains(parsed1[0], parsed1[1], portsIn)) /*&& (ifContains(parsed2[0], parsed2[1], portsOut))*/)
+=======
+                    switchTable.addLink(parsed[1], parsed[2]);
+                    Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed[1], parsed[2]);
+                    linkList.Add(newLink);
+                    
+
+                    Application.Current.Dispatcher.Invoke((Action)(() =>
+>>>>>>> 5eef011cd9188cbd7fa2be41b19ea2cadd51e528
                     {
                         switchTable.addLink(parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
                         Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
@@ -201,6 +210,7 @@ namespace NetworkNode
                         {
                             this.links.Items.Add(newLink);
 
+<<<<<<< HEAD
                         }));
                         break;
                     }
@@ -210,6 +220,11 @@ namespace NetworkNode
                         addLog(logs, Constants.NONEXISTENT_PORT, Constants.ERROR);
                         break;
                     }
+=======
+                    }));
+
+                    break;
+>>>>>>> 5eef011cd9188cbd7fa2be41b19ea2cadd51e528
                 case Constants.DELETE_LINK:
                     if (parsed[1] == "*")
                     {

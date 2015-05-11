@@ -124,8 +124,9 @@ namespace networkLibrary
 
         public void stopService()
         {
+            client.GetStream().Close();
             client.Close();
-            clientThread.Abort();
+            clientThread.Join();
         }
 
     }

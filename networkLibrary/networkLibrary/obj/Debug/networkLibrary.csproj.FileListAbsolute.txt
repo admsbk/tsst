@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
@@ -5,3 +6,12 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLib
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+=======
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+>>>>>>> 5eef011cd9188cbd7fa2be41b19ea2cadd51e528
