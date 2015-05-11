@@ -186,22 +186,25 @@ namespace NetworkNode
             //WZOR WIADOMOSCI PRZEROBIC NA WPIS DO SWITCHING TABLE
 
             string[] parsed = order.Split('%');
-            
+            string[] parsed1 = parsed[1].Split('.');
+            string[] parsed2 = parsed[2].Split('.');
 
             switch (parsed[0])
             {
                 case Constants.SET_LINK:
-                    string[] parsed1 = parsed[1].Split('.');
-                    string[] parsed2 = parsed[2].Split('.');
+
 
                     if ((ifContains(parsed1[0], parsed1[1], portsIn)) /*&& (ifContains(parsed2[0], parsed2[1], portsOut))*/)
                     {
+                    
+
                         switchTable.addLink(parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
                         Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
                         linkList.Add(newLink);
                         Application.Current.Dispatcher.Invoke((Action)(() =>
                         {
                             this.links.Items.Add(newLink);
+
 
                         }));
                         break;

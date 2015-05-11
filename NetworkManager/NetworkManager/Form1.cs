@@ -86,10 +86,10 @@ namespace NetworkManager
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            NetManager.stopManager();
             base.OnFormClosing(e);
-
-            if (NetManager != null)
-                NetManager.stopManager();
+            
+                
         }
 
         private void Logs_SelectedIndexChanged(object sender, EventArgs e)

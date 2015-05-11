@@ -169,6 +169,7 @@ namespace networkLibrary
                 try
                 {
                     serverSocket.Stop();
+                    
                     if (serverThread.IsAlive)
                     { serverThread.Abort(); }
                 }
@@ -177,7 +178,7 @@ namespace networkLibrary
                     Console.WriteLine("Unable to stop cloud");
                 }
             }
-                       
+                    
             serverSocket = null;
             serverThread = null;
         }
