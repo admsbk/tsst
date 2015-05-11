@@ -112,7 +112,8 @@ namespace ClientNode
             {
                 displayStatusMessage(e.Message, Constants.LOG_ERROR);
                 message = e.Message.Split('&')[1];
-                addChatMessage(message, Constants.RIGHT);
+                string dispMessage = message.Split('^')[0];
+                addChatMessage(dispMessage, Constants.RIGHT);
             }
             catch
             {

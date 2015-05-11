@@ -56,6 +56,7 @@ namespace NetworkNode
         {
             //addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
             string[] check = myArgs.Message.Split('%');
+            
             if (check[0] == NodeId)
             {
                 addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
@@ -74,7 +75,7 @@ namespace NetworkNode
             //tutaj coś by trzeba wykminić
             //addLog(logs, "Yout are: "+myArgs.Message, Constants.LOG_INFO);
             addLog(logs, Constants.NEW_MSG_RECIVED + " " + myArgs.Message, Constants.LOG_INFO);
-            string forwarded = switchTable.forwardMessage(myArgs.Message.Split('%')[1]);
+            string forwarded = switchTable.forwardMessage(myArgs.Message);
             if (forwarded != null) 
             { 
                 cloud.sendMessage(forwarded);
@@ -185,12 +186,13 @@ namespace NetworkNode
             //WZOR WIADOMOSCI PRZEROBIC NA WPIS DO SWITCHING TABLE
 
             string[] parsed = order.Split('%');
-            string[] parsed1 = parsed[1].Split('.');
-            string[] parsed2 = parsed[2].Split('.');
+            
 
             switch (parsed[0])
             {
                 case Constants.SET_LINK:
+                    string[] parsed1 = parsed[1].Split('.');
+                    string[] parsed2 = parsed[2].Split('.');
 
                     if ((ifContains(parsed1[0], parsed1[1], portsIn)) /*&& (ifContains(parsed2[0], parsed2[1], portsOut))*/)
                     {
@@ -211,6 +213,7 @@ namespace NetworkNode
                         break;
                     }
                 case Constants.DELETE_LINK:
+                    
                     if (parsed[1] == "*")
                     {
                         for (int i = links.Items.Count - 1; i >= 0; i--)
@@ -227,7 +230,8 @@ namespace NetworkNode
                     }
                     else
                     {
-                        switchTable.removeLink(parsed1[0],parsed1[1]);
+                        string[] parsedX = parsed[1].Split('.');
+                        switchTable.removeLink(parsedX[0],parsedX[1]);
                         for (int i = links.Items.Count - 1; i >= 0; i--)
                         {
                             if (parsed[1] == linkList[i].src)

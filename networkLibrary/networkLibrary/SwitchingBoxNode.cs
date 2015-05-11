@@ -21,15 +21,24 @@ namespace networkLibrary
         //ZWRACA: "KOMU%NA_KTORY_PORT&cos_tam_dalej"           ale w cos_tam_dalej trzeba dać inne delimetery niż & i %
         public string forwardMessage(string message)
         {
-            string[] tempMessage = new string[2];
-            tempMessage = message.Split('%');
+            string[] tempMessage = message.Split('%'); //tempMessage[0] - od kogo, tempMessage[1] - na jaki port przyszło & wiadomość
+            string[] tempMessage2 = tempMessage[1].Split('&');
+            string tempPort=tempMessage2[0];
+            string lastSlot = "";
 
-            if (SwitchingTable.ContainsKey(tempMessage[1]))
+            if (message.Contains("^"))
             {
-                string dstPort = (SwitchingTable[tempMessage[1]]);
-                dstPort.Split('.');
-                string dstMessage = dstPort[0] + "." + dstPort[1];
-                dstMessage += "&" + tempMessage[1];//dodanie payloadu po prostu
+                string[] slot = message.Split('^');
+                lastSlot = slot[1];
+            }
+
+
+            if (SwitchingTable.ContainsKey(tempPort + "." + lastSlot))
+            {
+                string dstPort = (SwitchingTable[tempPort + "." + lastSlot]);
+                string[] dstPortTemp = dstPort.Split('.');
+                string dstMessage = dstPortTemp[0];
+                dstMessage += "&" + tempMessage2[1] +"^" + dstPortTemp[1];//dodanie payloadu po prostu
                 return dstMessage;
             }
             else

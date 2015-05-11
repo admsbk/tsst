@@ -37,7 +37,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.LoadConfigurationButton = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.Stop = new System.Windows.Forms.Button();
+            this.LoadCommandScript = new System.Windows.Forms.Button();
+            this.loadScript = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // Start
@@ -62,7 +63,7 @@
             // 
             this.SendToAll.Location = new System.Drawing.Point(223, 297);
             this.SendToAll.Name = "SendToAll";
-            this.SendToAll.Size = new System.Drawing.Size(75, 20);
+            this.SendToAll.Size = new System.Drawing.Size(121, 20);
             this.SendToAll.TabIndex = 2;
             this.SendToAll.Text = "Send to all";
             this.SendToAll.UseVisualStyleBackColor = true;
@@ -107,22 +108,27 @@
             // 
             this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk_1);
             // 
-            // Stop
+            // LoadCommandScript
             // 
-            this.Stop.Location = new System.Drawing.Point(223, 268);
-            this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(75, 23);
-            this.Stop.TabIndex = 10;
-            this.Stop.Text = "Stop";
-            this.Stop.UseVisualStyleBackColor = true;
-            this.Stop.Click += new System.EventHandler(this.Stop_Click);
+            this.LoadCommandScript.Location = new System.Drawing.Point(223, 268);
+            this.LoadCommandScript.Name = "LoadCommandScript";
+            this.LoadCommandScript.Size = new System.Drawing.Size(121, 23);
+            this.LoadCommandScript.TabIndex = 11;
+            this.LoadCommandScript.Text = "Load command script";
+            this.LoadCommandScript.UseVisualStyleBackColor = true;
+            this.LoadCommandScript.Click += new System.EventHandler(this.button1_Click_1);
+            //
+            //loadScript
+            //
+            this.loadScript.FileName = "commandscript.txt";
+            this.loadScript.FileOk += new System.ComponentModel.CancelEventHandler(this.loadScript_FileOk);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 323);
-            this.Controls.Add(this.Stop);
+            this.Controls.Add(this.LoadCommandScript);
             this.Controls.Add(this.LoadConfigurationButton);
             this.Controls.Add(this.Logs);
             this.Controls.Add(this.SendToAll);
@@ -146,7 +152,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button LoadConfigurationButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button Stop;
+        private System.Windows.Forms.Button LoadCommandScript;
+        private System.Windows.Forms.OpenFileDialog loadScript;
 
     }
 }

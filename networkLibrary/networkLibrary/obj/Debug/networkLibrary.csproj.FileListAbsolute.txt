@@ -5,3 +5,11 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLib
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\bin\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.AboutAuthors.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.Properties.Resources.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy\networkLibrary\networkLibrary\obj\Debug\networkLibrary.csprojResolveAssemblyReference.cache
