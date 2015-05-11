@@ -10,7 +10,6 @@ namespace NetworkManager
     class CommandVerifier
     {
         string error = "";
-        int value;
 
         public string getErrorMessage()
         {

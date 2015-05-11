@@ -2,26 +2,16 @@
 <Node Id="NetworkNode2" CloudHost="localhost" CloudPort="3333" ManagerHost="localhost" ManagerPort="4444">
   <Ports>
     <InputPorts>
-      <Port Id="IP0.1" />
-	  <Port Id="IP0.2" />
-	  <Port Id="IP0.3" />
-	  <Port Id="IP1.1" />
-      <Port Id="IP1.2" />
-	  <Port Id="IP1.3" />
-	  <Port Id="IP2.1" />
-	  <Port Id="IP2.2" />
-	  <Port Id="IP2.3" />
+      <Port Id="IP0" />
+	  <Port Id="IP1" />
+	  <Port Id="IP2" />
+	  <Port Id="CIP" />
     </InputPorts>
     <OutputPorts>
-      <Port Id="OP0.1" />
-	  <Port Id="OP0.2" />
-      <Port Id="OP0.3" />
-	  <Port Id="OP1.1" />
-	  <Port Id="OP1.2" />
-      <Port Id="OP1.3" />
-	  <Port Id="OP2.1" />
-	  <Port Id="OP2.2" />
-      <Port Id="OP2.3" />
+      <Port Id="OP0" />
+	  <Port Id="OP1" />
+	  <Port Id="OP2" />
+	  <Port Id="COP" />
     </OutputPorts>
   </Ports>
 </Node>

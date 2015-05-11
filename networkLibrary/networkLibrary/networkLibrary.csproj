@@ -55,12 +55,14 @@
     <Compile Include="EndPoint.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="MessageArgs.cs" />
+    <Compile Include="Port.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SwitchingBox.cs" />
+    <Compile Include="SwitchingBoxNode.cs" />
     <Compile Include="transportClient.cs" />
     <Compile Include="transportServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

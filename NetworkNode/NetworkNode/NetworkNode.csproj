@@ -34,7 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="networkLibrary">
+    <Reference Include="networkLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\networkLibrary\networkLibrary\obj\Debug\networkLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />

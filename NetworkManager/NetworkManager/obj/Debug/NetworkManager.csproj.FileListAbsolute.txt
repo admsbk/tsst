@@ -59,8 +59,8 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkMan
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\NetworkManager.pdb
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\bin\Debug\networkLibrary.pdb
-C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Form1.resources
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.Properties.Resources.resources
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.exe
+C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkManager\NetworkManager\obj\Debug\NetworkManager.csprojResolveAssemblyReference.cache

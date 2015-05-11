@@ -106,7 +106,6 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\b
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
-C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
@@ -117,3 +116,4 @@ C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\o
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+C:\Users\Maciej\Desktop\TSST PROJEKT\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll

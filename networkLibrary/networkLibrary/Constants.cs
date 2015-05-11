@@ -76,5 +76,11 @@ namespace networkLibrary
         public const int TEXT = 1;
         public const int INFO = 2;
         public const int ERROR = 3;
+
+        public const string NONEXISTENT_PORT = "No such port/slot in this node.";
+        public const string CLIENT_INPUT_PORT = "CIP";
+        public const string CLIENT_OUTPUT_PORT = "COP";
+
+
     }
 }

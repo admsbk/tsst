@@ -22,7 +22,7 @@ namespace NetworkNode
         private int rIndex;
         private transportClient cloud;
         private transportClient manager;
-        private SwitchingBox switchTable;
+        private networkLibrary.SwitchingBoxNode switchTable;
 
         private List<Link> linkList;
 
@@ -36,8 +36,9 @@ namespace NetworkNode
         string NodeId { get; set; }
         public List<string> portsInTemp { get; set; }
         public List<string> portsOutTemp { get; set; }
-        public List<Port> portsIn { get; set; }
-        public List<Port> portsOut { get; set; }
+
+        public List<Port> portsIn = new List<Port>();
+        public List<Port> portsOut = new List<Port>();
 
 
         public Node(Grid logs, ListView links, MainWindow mainWindow)
@@ -47,7 +48,7 @@ namespace NetworkNode
             this.mainWindow = mainWindow;
 
             rIndex = Grid.GetRow(logs);
-            switchTable = new SwitchingBox();
+            switchTable = new SwitchingBoxNode();
             linkList = new List<Link>();
         }
 
@@ -100,25 +101,37 @@ namespace NetworkNode
                 this.portsInTemp = conf.portsIn;
                 this.portsOutTemp = conf.portsOut;
 
+               
                 foreach (string portIn in portsInTemp)
                 {
-                    string[] portInfo = portIn.Split('.');
-                    Port tempPort = new Port(portInfo[0],portInfo[1]);
-                    portsIn.Add(tempPort);
-                    tempPort = null;
+
+                        Port tempPort = new Port(portIn);
+                        this.portsIn.Add(tempPort);
+
+                    
                 }
 
                 foreach (string portOut in portsOutTemp)
                 {
-                    string[] portInfo = portOut.Split('.');
-                    Port tempPort = new Port(portInfo[0], portInfo[1]);
-                    portsOut.Add(tempPort);
-                    tempPort = null;
+
+                        Port tempPort = new Port(portOut);
+                        this.portsIn.Add(tempPort);
+
                 }
                 
                 this.mainWindow.Title = this.NodeId; 
                 addLog(logs, networkLibrary.Constants.CONFIG_OK, networkLibrary.Constants.LOG_INFO);
+
+                foreach (Port portIn in portsIn)
+                {
+                    addLog(logs,portIn.portID,Constants.TEXT);
+                }
+                foreach (Port portOut in portsOut)
+                {
+                    addLog(logs, portOut.portID, Constants.TEXT);
+                }
             }
+
             catch(Exception e)
             {
                 addLog(logs, networkLibrary.Constants.CONFIG_ERROR, networkLibrary.Constants.LOG_ERROR);
@@ -172,19 +185,31 @@ namespace NetworkNode
             //WZOR WIADOMOSCI PRZEROBIC NA WPIS DO SWITCHING TABLE
 
             string[] parsed = order.Split('%');
+            string[] parsed1 = parsed[1].Split('.');
+            string[] parsed2 = parsed[2].Split('.');
 
             switch (parsed[0])
             {
                 case Constants.SET_LINK:
-                    switchTable.addLink(parsed[1], parsed[2]);
-                    Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed[1], parsed[2]);
-                    linkList.Add(newLink);
-                    Application.Current.Dispatcher.Invoke((Action)(() =>
-                    {
-                        this.links.Items.Add(newLink);
 
-                    }));
-                    break;
+                    if ((ifContains(parsed1[0], parsed1[1], portsIn)) /*&& (ifContains(parsed2[0], parsed2[1], portsOut))*/)
+                    {
+                        switchTable.addLink(parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
+                        Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
+                        linkList.Add(newLink);
+                        Application.Current.Dispatcher.Invoke((Action)(() =>
+                        {
+                            this.links.Items.Add(newLink);
+
+                        }));
+                        break;
+                    }
+                    
+                    else
+                    {
+                        addLog(logs, Constants.NONEXISTENT_PORT, Constants.ERROR);
+                        break;
+                    }
                 case Constants.DELETE_LINK:
                     if (parsed[1] == "*")
                     {
@@ -202,7 +227,7 @@ namespace NetworkNode
                     }
                     else
                     {
-                        switchTable.removeLink(parsed[1]);
+                        switchTable.removeLink(parsed1[0],parsed1[1]);
                         for (int i = links.Items.Count - 1; i >= 0; i--)
                         {
                             if (parsed[1] == linkList[i].src)
@@ -263,6 +288,28 @@ namespace NetworkNode
             }
         }
 
+        public bool ifContains(string portID, string slot,List<Port> list)
+        {
+
+
+            foreach (Port portTemp in list)
+            {
+                if (portTemp.portID == portID)
+                {
+                   addLog(logs, "bangla"+portID, Constants.TEXT);
+                   if (portTemp.portID.Contains("C"))
+                       return true;
+                   else if (portTemp.slots.Contains(slot))
+                   {
+                       addLog(logs, "bangla"+portID, Constants.TEXT);
+                        return true;
+
+                   }
+                }
+            }
+            addLog(logs, "nie bangla"+portID, Constants.TEXT);
+            return false;
+        }
 
     }
 }
