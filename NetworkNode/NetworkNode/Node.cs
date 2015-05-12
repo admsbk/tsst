@@ -8,6 +8,7 @@ using System.Xml;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace NetworkNode
 {
@@ -23,6 +24,7 @@ namespace NetworkNode
         private transportClient cloud;
         private transportClient manager;
         private networkLibrary.SwitchingBoxNode switchTable;
+        private networkLibrary.SynchronousTransportModule[] STM;
 
         private List<Link> linkList;
 
@@ -41,15 +43,41 @@ namespace NetworkNode
         public List<Port> portsOut = new List<Port>();
 
 
+
         public Node(Grid logs, ListView links, MainWindow mainWindow)
         {
             this.logs = logs;
             this.links = links;
             this.mainWindow = mainWindow;
 
+
+
+
             rIndex = Grid.GetRow(logs);
             switchTable = new SwitchingBoxNode();
             linkList = new List<Link>();
+        }
+
+        private void startSending()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ((sender, e) =>
+            {
+                int i=0;
+                foreach (SynchronousTransportModule stm in STM)
+                {
+                    string tos = stm.prepareToSend().Split(':')[1];
+                    if (SynchronousTransportModule.getSlots(tos) != null)
+                    {
+                        cloud.sendMessage(portsOutTemp[i] + "&" + stm.prepareToSend());
+                        addLog(logs, stm.prepareToSend(), Constants.LOG_INFO);
+                    }
+                        stm.clearSTM();
+                        i++;
+                }
+            });
+            timer.Start();
         }
 
         private void newOrderRecived(object myObject, MessageArgs myArgs)
@@ -75,11 +103,43 @@ namespace NetworkNode
             //tutaj coś by trzeba wykminić
             //addLog(logs, "Yout are: "+myArgs.Message, Constants.LOG_INFO);
             addLog(logs, Constants.NEW_MSG_RECIVED + " " + myArgs.Message, Constants.LOG_INFO);
-            string forwarded = switchTable.forwardMessage(myArgs.Message);
-            if (forwarded != null) 
+            string[] forwarded = switchTable.forwardMessage(myArgs.Message);
+            if (forwarded != null) //czyli nie przyszla pusta stmka
             { 
-                cloud.sendMessage(forwarded);
-                addLog(logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                //cloud.sendMessage(forwarded);
+
+                foreach (string s in forwarded)
+                {
+                    if (s != null)
+                    {
+                        string[] msg = s.Split('&');
+                        string[] msg1 = msg[1].Split('^');
+
+                        if (s.Contains("CO"))
+                        {
+                            cloud.sendMessage(s);
+                            addLog(logs, Constants.FORWARD_MESSAGE + " " + s, Constants.LOG_INFO);
+                        }
+                        else
+                        {
+                            try
+                            {
+                                STM.ElementAt(portsOutTemp.IndexOf(msg[0])).reserveSlot(Convert.ToInt32(msg1[0]), msg1[1]);
+                                addLog(logs, "slot reserved ", Constants.LOG_INFO);
+                                addLog(logs, Constants.FORWARD_MESSAGE + " " + s, Constants.LOG_INFO);
+                            }
+                            catch
+                            {
+                                //addLog(logs, "slot reserved before/not empty", Constants.LOG_ERROR);
+                            }
+                        }
+                        
+                    }
+                }
+
+                //string[] ports = forwarded.Split('&')[0].Split('%');
+
+                
             }
             else
             {
@@ -155,6 +215,14 @@ namespace NetworkNode
                 cloud.sendMessage(this.NodeId+"#");
 
                 addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+
+                this.STM = new SynchronousTransportModule[portsOutTemp.Count];
+                for (int i = 0; i < STM.Length; i++)
+                {
+                    this.STM[i] = new SynchronousTransportModule(Constants.STM_CAPACITY);// TUTAJ DODAC JESZCZE PARAMETR Z XMLA
+                }
+
+                startSending();
                 
             }
             catch
@@ -252,6 +320,15 @@ namespace NetworkNode
         }
         private void addLog(Grid log, string message, int logType)
         {
+            List<string> a = new List<string>();
+            for (int i = 0; i < message.Length; i += 40)
+            {
+                if ((i + 40) < message.Length)
+                    a.Add(message.Substring(i, 40));
+                else
+                    a.Add(message.Substring(i));
+            }
+
             var color = Brushes.Black;
 
             switch(logType){
@@ -268,11 +345,14 @@ namespace NetworkNode
                      new Action(() =>
                      {
                          var t = new TextBlock();
-                         t.Text = ("[" + DateTime.Now.ToString("HH:mm:ss") + "]  " +
-                             message + Environment.NewLine);
+                         t.Text = ("[" + DateTime.Now.ToString("HH:mm:ss") + "]  "); 
+                         foreach(string str in a){    
+                         t.Text+="     "+str + Environment.NewLine;
+                         }
+
                          t.Foreground = color;
                          RowDefinition gridRow = new RowDefinition();
-                         gridRow.Height = new GridLength(15);
+                         gridRow.Height = new GridLength(a.Count*15);
                          log.RowDefinitions.Add(gridRow);
                          Grid.SetRow(t, messageNumber);
                          messageNumber++;

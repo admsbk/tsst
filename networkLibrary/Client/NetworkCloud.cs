@@ -75,28 +75,65 @@ namespace Cloud
 
         private void newMessageRecived(object a, MessageArgs e)
         {
+            if(e.Message.Contains("CO"))
+            {
+                string getSenderId = clientSockets.FirstOrDefault(x => x.Value == e.ID).Key;
+                addLog(this.logs, Constants.NEW_MSG_RECIVED + " from " + getSenderId + " " + e.Message, Constants.LOG_INFO);
+                    try
+                    {
+                        string forwarded = switchBox.forwardMessage(getSenderId + "%" + e.Message);
+                        string[] getNextNode = forwarded.Split('%');
+                        server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
+                        addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                    }
+                    catch
+                    {
+                        addLog(this.logs, Constants.UNREACHABLE_DST + " " + switchBox.forwardMessage(getSenderId + "%" + e.Message), Constants.LOG_ERROR);
+                    }
+            }
             
-            if (e.Message.Split('#').Length == 1)
+            else if (e.Message.Split('#').Length == 1 && e.Message.Split('/').Length != 2)
             {
                 //string[] getSenderId = e.Message.Split('%');
                 string getSenderId = clientSockets.FirstOrDefault(x => x.Value == e.ID).Key;
-                addLog(this.logs, Constants.NEW_MSG_RECIVED + " from " + getSenderId +" " + e.Message, Constants.LOG_INFO);
-                
+                if (e.Message.Split(':').Length > 1)
+                {
+                addLog(this.logs, Constants.NEW_MSG_RECIVED + " from " + getSenderId + " " + e.Message, Constants.LOG_INFO);
+                    try
+                    {
+                        string forwarded = switchBox.forwardMessage(getSenderId + "%" + e.Message);
+                        string[] getNextNode = forwarded.Split('%');
+                        server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
+                        addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                    }
+                    catch
+                    {
+                        addLog(this.logs, Constants.UNREACHABLE_DST + " " + switchBox.forwardMessage(getSenderId + "%" + e.Message), Constants.LOG_ERROR);
+                    }
+                }
+                               
+            }
 
-                
-                try
+            
+            else if (e.Message.Split('#').Length == 1 && e.Message.Split('/').Length == 2)
+            {
+                string getSenderId = clientSockets.FirstOrDefault(x => x.Value == e.ID).Key;
+                string[] receivedSlots = SynchronousTransportModule.getSlots(e.Message.Split('/')[0]);
+                if (receivedSlots != null)
                 {
-                    string forwarded = switchBox.forwardMessage(getSenderId+"%"+e.Message);
-                    string[] getNextNode = forwarded.Split('%');
-                    server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
-                    addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                    addLog(this.logs, Constants.NEW_MSG_RECIVED + " from " + getSenderId + " " + e.Message, Constants.LOG_INFO);
+                    try
+                    {
+                        string forwarded = switchBox.forwardMessage(getSenderId + "%" + e.Message);
+                        string[] getNextNode = forwarded.Split('%');
+                        server.sendMessage(clientSockets[getNextNode[0]], getSenderId + "%" + getNextNode[1]);
+                        addLog(this.logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                    }
+                    catch
+                    {
+                        addLog(this.logs, Constants.UNREACHABLE_DST + " " + switchBox.forwardMessage(getSenderId + "%" + e.Message), Constants.LOG_ERROR);
+                    }
                 }
-                catch
-                {
-                    addLog(this.logs, Constants.UNREACHABLE_DST + " " + switchBox.forwardMessage(getSenderId + "%" + e.Message), Constants.LOG_ERROR);
-                }
-                
-                
             }
             else
             {

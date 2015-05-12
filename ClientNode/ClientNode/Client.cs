@@ -112,7 +112,7 @@ namespace ClientNode
             {
                 displayStatusMessage(e.Message, Constants.LOG_ERROR);
                 message = e.Message.Split('&')[1];
-                string dispMessage = message.Split('^')[0];
+                string dispMessage = message.Split('^')[1];
                 addChatMessage(dispMessage, Constants.RIGHT);
             }
             catch
@@ -125,7 +125,7 @@ namespace ClientNode
         {
             try
             {
-                client.sendMessage(this.portsOut[0] + "&" + msg);
+                client.sendMessage(this.portsOut[0] + "&" + msg+"/");
                 addChatMessage(msg, Constants.LEFT);
             }
             catch { }
@@ -159,6 +159,7 @@ namespace ClientNode
         private void addChatMessage(string msg, int aligment)
         {
             var algmnt = System.Windows.TextAlignment.Left;
+            var color = Brushes.Black;
             switch (aligment)
             {   
                 case Constants.LEFT:
@@ -166,6 +167,7 @@ namespace ClientNode
                     break;
                 case Constants.RIGHT:
                     algmnt = System.Windows.TextAlignment.Right;
+                    color = Brushes.Blue;
                     break;
             }
 
@@ -177,6 +179,7 @@ namespace ClientNode
                     t.Text = ("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + Environment.NewLine +
                         msg + Environment.NewLine + Environment.NewLine);
                     t.TextAlignment = algmnt;
+                    t.Foreground = color;
                     RowDefinition gridRow = new RowDefinition();
                     gridRow.Height = new GridLength(35);
                     chat.RowDefinitions.Add(gridRow);

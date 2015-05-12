@@ -9,7 +9,7 @@ namespace networkLibrary
     public class Constants
     {
         public const string NEW_CLIENT_LOG = "New client conneted";
-        public const string NEW_MSG_RECIVED = "New message recived";
+        public const string NEW_MSG_RECIVED = "New message received";
         public const string CONFIG_OK = "Configuration loaded correctly";
         public const string CONFIG_ERROR = "Configuration loaded incorrectly";
         public const string SERVICE_START_OK = "Service started correctly";
@@ -47,7 +47,7 @@ namespace networkLibrary
         public const string Client = "//Client[@Id]";
 
         //handle messages
-        public const string RECIVED_FROM_MANAGER = "Recived from Network Manager:";
+        public const string RECIVED_FROM_MANAGER = "Received from Network Manager:";
         public const string FORWARD_MESSAGE = "Forwarding following message:";
         public const string INVALID_PORT = "No such port in Forward Table";
 
@@ -80,6 +80,8 @@ namespace networkLibrary
         public const string NONEXISTENT_PORT = "No such port/slot in this node.";
         public const string CLIENT_INPUT_PORT = "CIP";
         public const string CLIENT_OUTPUT_PORT = "COP";
+
+        public const int STM_CAPACITY = 3;
 
 
     }
