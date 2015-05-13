@@ -8,6 +8,7 @@ using System.Xml;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace NetworkNode
 {
@@ -23,9 +24,8 @@ namespace NetworkNode
         private transportClient cloud;
         private transportClient manager;
         private networkLibrary.SwitchingBoxNode switchTable;
-
+        private networkLibrary.SynchronousTransportModule[] STM;
         private List<Link> linkList;
-
         public transportClient.NewMsgHandler newMessageHandler { get; set; }
         public transportClient.NewMsgHandler newOrderHandler { get; set; }
         
@@ -36,27 +36,44 @@ namespace NetworkNode
         string NodeId { get; set; }
         public List<string> portsInTemp { get; set; }
         public List<string> portsOutTemp { get; set; }
-
         public List<Port> portsIn = new List<Port>();
         public List<Port> portsOut = new List<Port>();
-
 
         public Node(Grid logs, ListView links, MainWindow mainWindow)
         {
             this.logs = logs;
             this.links = links;
             this.mainWindow = mainWindow;
-
             rIndex = Grid.GetRow(logs);
             switchTable = new SwitchingBoxNode();
             linkList = new List<Link>();
         }
 
+        private void startSending()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ((sender, e) =>
+            {
+                int i=0;
+                foreach (SynchronousTransportModule stm in STM)
+                {
+                    string tos = stm.prepareToSend().Split(':')[1];
+                    if (SynchronousTransportModule.getSlots(tos) != null)
+                    {
+                        cloud.sendMessage(portsOutTemp[i] + "&" + stm.prepareToSend());
+                        addLog(logs, stm.prepareToSend(), Constants.LOG_INFO);
+                    }
+                    stm.clearSTM();
+                    i++;
+                }
+            });
+            timer.Start();
+        }
+
         private void newOrderRecived(object myObject, MessageArgs myArgs)
         {
-            //addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
             string[] check = myArgs.Message.Split('%');
-            
             if (check[0] == NodeId)
             {
                 addLog(logs, Constants.RECIVED_FROM_MANAGER + " " + myArgs.Message, Constants.LOG_INFO);
@@ -65,26 +82,106 @@ namespace NetworkNode
                 else if (check[1] == Constants.DELETE_LINK)
                     parseOrder(check[1] + "%" + check[2]);
                 else if(check[1]==Constants.SHOW_LINK)
-                    parseOrder(check[1] + "%" + check[2]);
-                
+                    parseOrder(check[1] + "%" + check[2]);   
             }            
         }
 
         private void newMessageRecived(object myObject, MessageArgs myArgs)
         {
-            //tutaj coś by trzeba wykminić
-            //addLog(logs, "Yout are: "+myArgs.Message, Constants.LOG_INFO);
             addLog(logs, Constants.NEW_MSG_RECIVED + " " + myArgs.Message, Constants.LOG_INFO);
-            string forwarded = switchTable.forwardMessage(myArgs.Message);
-            if (forwarded != null) 
+
+            string[] fromWho = myArgs.Message.Split('%');
+            if (fromWho[0].Contains("C"))
+            {
+                string forwarded = switchTable.forwardMessage(myArgs.Message);
+
+                try
+                {
+                    string port = forwarded.Split('^')[0];
+                    string slot = forwarded.Split('^')[1].Split('&')[0];
+                    STM.ElementAt(portsOutTemp.IndexOf(port)).reserveSlot(Convert.ToInt32(slot), forwarded.Split('^')[1].Split('&')[1]);
+                    addLog(logs, "slot reserved ", Constants.LOG_INFO);
+                    addLog(logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                }
+                catch(Exception e)
+                {
+                    //addLog(logs, "slot reserved before/not empty", Constants.LOG_ERROR);
+                    addLog(logs, Constants.INVALID_PORT, Constants.LOG_ERROR);
+                }
+            }
+
+            else if (fromWho[1].Split('/').Length>1)
+            {
+                string[] slots = SynchronousTransportModule.getSlots(fromWho[1].Split(':')[1]);
+                try
+                {
+                    int i = 0;
+                    foreach (string s in slots)
+                    {
+                        if (s.Length != 0)
+                        {
+                            string forwarded = switchTable.forwardMessage(fromWho[0]+"%"+fromWho[1].Split('&')[0]+"."+i+"&"+s);
+                            addLog(logs, forwarded, Constants.LOG_INFO);
+                            string port = forwarded.Split('^')[0];
+                            string slot = forwarded.Split('^')[1].Split('&')[0];
+                            if (!port.Contains("C"))
+                            {
+                                STM.ElementAt(portsOutTemp.IndexOf(port)).reserveSlot(Convert.ToInt32(slot), forwarded.Split('^')[1].Split('&')[1]);
+                                addLog(logs, "slot reserved ", Constants.LOG_INFO);
+                                addLog(logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                            }
+                            else
+                            {
+                                cloud.sendMessage(forwarded);
+                            }
+                        }
+                        i++;
+                    }
+
+                }
+                catch
+                {
+                    addLog(logs, Constants.INVALID_PORT, Constants.LOG_ERROR);
+                }
+            }
+
+            /*
+            string[] forwarded = switchTable.forwardMessage(myArgs.Message);
+            if (forwarded != null) //czyli nie przyszla pusta stmka
             { 
-                cloud.sendMessage(forwarded);
-                addLog(logs, Constants.FORWARD_MESSAGE + " " + forwarded, Constants.LOG_INFO);
+                foreach (string s in forwarded)
+                {
+                    if (s != null)
+                    {
+                        string[] msg = s.Split('&');
+                        string[] msg1 = msg[1].Split('^');
+
+                        if (s.Contains("CO"))
+                        {
+                            cloud.sendMessage(s);
+                            addLog(logs, Constants.FORWARD_MESSAGE + " " + s, Constants.LOG_INFO);
+                        }
+                        else
+                        {
+                            try
+                            {
+                                STM.ElementAt(portsOutTemp.IndexOf(msg[0])).reserveSlot(Convert.ToInt32(msg1[0]), msg1[1]);
+                                addLog(logs, "slot reserved ", Constants.LOG_INFO);
+                                addLog(logs, Constants.FORWARD_MESSAGE + " " + s, Constants.LOG_INFO);
+                            }
+                            catch
+                            {
+                                //addLog(logs, "slot reserved before/not empty", Constants.LOG_ERROR);
+                            }
+                        }
+                        
+                    }
+                }
             }
             else
             {
                 addLog(logs, Constants.INVALID_PORT, Constants.LOG_ERROR);
-            }
+            }*/
             
         }
 
@@ -155,6 +252,14 @@ namespace NetworkNode
                 cloud.sendMessage(this.NodeId+"#");
 
                 addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
+
+                this.STM = new SynchronousTransportModule[portsOutTemp.Count];
+                for (int i = 0; i < STM.Length; i++)
+                {
+                    this.STM[i] = new SynchronousTransportModule(3);// TUTAJ DODAC JESZCZE PARAMETR Z XMLA
+                }
+
+                startSending();
                 
             }
             catch
@@ -165,20 +270,6 @@ namespace NetworkNode
 
                 throw new Exception("zly start networknode");
             }
-
-           /* if (cloud.isConnected() && manager.isConnected())
-            {
-                addLog(logs, Constants.SERVICE_START_OK, Constants.LOG_INFO);
-            }
-
-            if (cloud.isConnected() == false)
-            {
-                addLog(logs, Constants.CANNOT_CONNECT_TO_CLOUD, Constants.LOG_ERROR);
-            }
-            if (manager.isConnected() == false)
-            {
-                addLog(logs, Constants.CANNOT_CONNECT_TO_MANAGER, Constants.LOG_ERROR);
-            }*/
         }
 
         private void parseOrder(string order)
@@ -195,20 +286,23 @@ namespace NetworkNode
                     string[] parsed2 = parsed[2].Split('.');
 
 
-                    if ((ifContains(parsed1[0], parsed1[1], portsIn)) /*&& (ifContains(parsed2[0], parsed2[1], portsOut))*/)
+                    if ((ifContains(parsed1[0], parsed1[1], portsIn)))
                     {
-                    
+                       
+                            if (switchTable.addLink(parsed1[0], parsed1[1], parsed2[0], parsed2[1]))
+                            {
+                                Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
+                                linkList.Add(newLink);
 
-                        switchTable.addLink(parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
-                        Link newLink = new Link(Convert.ToString(linkList.Count() + 1), parsed1[0], parsed1[1], parsed2[0], parsed2[1]);
-                        linkList.Add(newLink);
-                        Application.Current.Dispatcher.Invoke((Action)(() =>
-                        {
-                            this.links.Items.Add(newLink);
+                                Application.Current.Dispatcher.Invoke((Action)(() =>
+                                {
+                                    this.links.Items.Add(newLink);
 
 
-                        }));
-                        break;
+                                }));
+                            }
+                            break;
+                        
                     }
                     
                     else
@@ -298,24 +392,19 @@ namespace NetworkNode
 
         public bool ifContains(string portID, string slot,List<Port> list)
         {
-
-
             foreach (Port portTemp in list)
             {
                 if (portTemp.portID == portID)
                 {
-                   addLog(logs, "bangla"+portID, Constants.TEXT);
                    if (portTemp.portID.Contains("C"))
                        return true;
                    else if (portTemp.slots.Contains(slot))
                    {
-                       addLog(logs, "bangla"+portID, Constants.TEXT);
                         return true;
-
                    }
                 }
             }
-            addLog(logs, "nie bangla"+portID, Constants.TEXT);
+
             return false;
         }
 

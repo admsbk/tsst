@@ -14,9 +14,9 @@ namespace NetworkNode
         public Port(string portID)
         {
             this.portID = portID;
+            this.slots.Add("0");
             this.slots.Add("1");
             this.slots.Add("2");
-            this.slots.Add("3");
         }
 
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Client Id="ClientNode3" CloudHost="localhost" CloudPort="3333" Name="Marcin">
+<Client Id="ClientNode3" CloudHost="localhost" CloudPort="3333" Name="3.Marcinek">
 <Ports>
     <InputPorts>
       	<Port Id="IP1" />

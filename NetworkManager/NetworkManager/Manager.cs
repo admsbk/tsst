@@ -85,8 +85,14 @@ namespace NetworkManager
                    logs.addLogFromOutside("Sending message: " + command, true, Constants.LOG_INFO);
                    foreach (TcpClient client in server.clientSocket)
                    {
-                       
-                       server.sendMessage(client, command);
+                      // try
+                      // {
+                           server.sendMessage(client, command);
+                      // }
+                       //catch
+                      // {
+
+                      // }
                    }
                    returned = true;
                }

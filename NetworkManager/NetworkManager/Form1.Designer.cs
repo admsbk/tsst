@@ -65,7 +65,7 @@
             this.SendToAll.Name = "SendToAll";
             this.SendToAll.Size = new System.Drawing.Size(121, 20);
             this.SendToAll.TabIndex = 2;
-            this.SendToAll.Text = "Send to all";
+            this.SendToAll.Text = "Send";
             this.SendToAll.UseVisualStyleBackColor = true;
             this.SendToAll.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -117,9 +117,9 @@
             this.LoadCommandScript.Text = "Load command script";
             this.LoadCommandScript.UseVisualStyleBackColor = true;
             this.LoadCommandScript.Click += new System.EventHandler(this.button1_Click_1);
-            //
-            //loadScript
-            //
+            // 
+            // loadScript
+            // 
             this.loadScript.FileName = "commandscript.txt";
             this.loadScript.FileOk += new System.ComponentModel.CancelEventHandler(this.loadScript_FileOk);
             // 

@@ -147,3 +147,78 @@ E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\NetworkNode
 E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
 E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
 E:\Users\rawks_000\Downloads\dyskretni_koderzy (2)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.dll
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\networkLibrary.pdb
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.baml
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\MainWindow.g.cs
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\App.g.cs
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode_MarkupCompile.cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache

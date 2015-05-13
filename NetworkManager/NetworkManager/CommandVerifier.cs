@@ -73,7 +73,7 @@ namespace NetworkManager
 
             else if (subcommands[1].Equals(networkLibrary.Constants.DELETE_LINK))
                 {
-                    if (subcommands.Length>2)
+                    if (subcommands.Length>3)
                     {
                         error = networkLibrary.Constants.TOO_MANY;
                         return false;

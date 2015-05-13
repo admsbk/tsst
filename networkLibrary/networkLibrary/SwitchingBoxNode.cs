@@ -21,34 +21,29 @@ namespace networkLibrary
         //ZWRACA: "KOMU%NA_KTORY_PORT&cos_tam_dalej"           ale w cos_tam_dalej trzeba dać inne delimetery niż & i %
         public string forwardMessage(string message)
         {
-            string[] tempMessage = message.Split('%'); //tempMessage[0] - od kogo, tempMessage[1] - na jaki port przyszło & wiadomość
-            string[] tempMessage2 = tempMessage[1].Split('&');
-            string tempPort=tempMessage2[0];
-            string lastSlot = "";
-
-            if (message.Contains("^"))
+            try
             {
-                string[] slot = message.Split('^');
-                lastSlot = slot[1];
-            }
-
-
-            if (SwitchingTable.ContainsKey(tempPort + "." + lastSlot))
-            {
-                string dstPort = (SwitchingTable[tempPort + "." + lastSlot]);
+                string dstPort;
+                string toReturn;
+                string[] tempMessage = message.Split('%'); //od kogo + pdu
+                string[] tempMessage2 = tempMessage[1].Split('&'); // port + dane
+                if(tempMessage[0].Contains("C"))
+                    dstPort = (SwitchingTable[tempMessage2[0]+"."]);
+                else
+                    dstPort = SwitchingTable[tempMessage2[0]];
                 string[] dstPortTemp = dstPort.Split('.');
-                string dstMessage = dstPortTemp[0];
-                dstMessage += "&" + tempMessage2[1] +"^" + dstPortTemp[1];//dodanie payloadu po prostu
-                return dstMessage;
+                toReturn = dstPortTemp[0] + "^" + dstPortTemp[1] + "&" + tempMessage2[1];//dodanie payloadu po prostu
+                return toReturn;
             }
-            else
+            catch(Exception e)
             {
                 return null;
             }
+
         }
 
         //szablon: src - "OD_KOGO%PORT"    dst - "DO_KOGO%PORT"
-        public void addLink(string src, string srcSlot, string dst, string dstSlot)
+        public bool addLink(string src, string srcSlot, string dst, string dstSlot)
         {
             string tempInPort = src + "." + srcSlot;
             string tempOutPort = dst + "." + dstSlot;
@@ -56,6 +51,11 @@ namespace networkLibrary
             if (!SwitchingTable.ContainsKey(tempInPort))
             {
                 this.SwitchingTable.Add(tempInPort, tempOutPort);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

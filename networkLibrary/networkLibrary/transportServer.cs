@@ -191,18 +191,17 @@ namespace networkLibrary
                 if (client != null)
                 {
                     
-                    if (client.Connected)
+                    try
                     {
                         stream = client.GetStream();
                         byte[] buffer = encoder.GetBytes(msg);
                         stream.Write(buffer, 0, buffer.Length);
                         stream.Flush();
                     }
-                    else
+                    catch
                     {
                         //stream.Close();
-                        clientSocket.Remove(client);
-                        throw new Exception("Null Socket Exception");
+
                     }
                 }
             }

@@ -2,15 +2,15 @@
 <Node Id="NetworkNode1" CloudHost="localhost" CloudPort="3333" ManagerHost="localhost" ManagerPort="4444">
   <Ports>
     <InputPorts>
-      <Port Id="IP0" />
-	  <Port Id="IP1" />
+      <Port Id="IP1" />
 	  <Port Id="IP2" />
+	  <Port Id="IP3" />
 	  <Port Id="CIP" />
     </InputPorts>
     <OutputPorts>
-      <Port Id="OP0" />
-	  <Port Id="OP1" />
+      <Port Id="OP1" />
 	  <Port Id="OP2" />
+	  <Port Id="OP3" />
 	  <Port Id="COP" />
     </OutputPorts>
   </Ports>
