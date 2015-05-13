@@ -67,7 +67,11 @@
     <Compile Include="transportClient.cs" />
     <Compile Include="transportServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="VirtualContainer4.cs" />
+=======
+    <Compile Include="VirtualContainer3.cs" />
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AboutAuthors.resx">

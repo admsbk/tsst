@@ -162,6 +162,7 @@ E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_k
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.g.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\bin\Debug\NetworkNode.exe.config
 D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.exe
 D:\Browser Downloads\dyskretni_koderzy\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.pdb
@@ -222,3 +223,5 @@ C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\Netw
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.Properties.Resources.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csproj.GenerateResource.Cache
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\NetworkNode.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac

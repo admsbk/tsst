@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\
+=======
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\obj\Debug\
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
 NetworkNode
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\NetworkNode\NetworkNode\App.xaml
 11151548125
 
 8-111908349
 13563330982
+=======
+E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\NetworkNode\NetworkNode\App.xaml
+11151548125
+
+8-111908349
+13231111573
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
 MainWindow.xaml;
 
 False

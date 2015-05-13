@@ -25,6 +25,10 @@ namespace NetworkNode
         private transportClient manager;
         private networkLibrary.SwitchingBoxNode switchTable;
         private networkLibrary.SynchronousTransportModule[] STM;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
         private List<Link> linkList;
         public transportClient.NewMsgHandler newMessageHandler { get; set; }
         public transportClient.NewMsgHandler newOrderHandler { get; set; }
@@ -39,11 +43,23 @@ namespace NetworkNode
         public List<Port> portsIn = new List<Port>();
         public List<Port> portsOut = new List<Port>();
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
         public Node(Grid logs, ListView links, MainWindow mainWindow)
         {
             this.logs = logs;
             this.links = links;
             this.mainWindow = mainWindow;
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
             rIndex = Grid.GetRow(logs);
             switchTable = new SwitchingBoxNode();
             linkList = new List<Link>();
@@ -64,8 +80,13 @@ namespace NetworkNode
                         cloud.sendMessage(portsOutTemp[i] + "&" + stm.prepareToSend());
                         addLog(logs, stm.prepareToSend(), Constants.LOG_INFO);
                     }
+<<<<<<< HEAD
                     stm.clearSTM();
                     i++;
+=======
+                        stm.clearSTM();
+                        i++;
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
                 }
             });
             timer.Start();
@@ -89,6 +110,7 @@ namespace NetworkNode
         private void newMessageRecived(object myObject, MessageArgs myArgs)
         {
             addLog(logs, Constants.NEW_MSG_RECIVED + " " + myArgs.Message, Constants.LOG_INFO);
+<<<<<<< HEAD
 
             string[] fromWho = myArgs.Message.Split('%');
             if (fromWho[0].Contains("C"))
@@ -149,6 +171,13 @@ namespace NetworkNode
             string[] forwarded = switchTable.forwardMessage(myArgs.Message);
             if (forwarded != null) //czyli nie przyszla pusta stmka
             { 
+=======
+            string[] forwarded = switchTable.forwardMessage(myArgs.Message);
+            if (forwarded != null) //czyli nie przyszla pusta stmka
+            { 
+                //cloud.sendMessage(forwarded);
+
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
                 foreach (string s in forwarded)
                 {
                     if (s != null)
@@ -177,6 +206,13 @@ namespace NetworkNode
                         
                     }
                 }
+<<<<<<< HEAD
+=======
+
+                //string[] ports = forwarded.Split('&')[0].Split('%');
+
+                
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
             }
             else
             {
@@ -256,7 +292,11 @@ namespace NetworkNode
                 this.STM = new SynchronousTransportModule[portsOutTemp.Count];
                 for (int i = 0; i < STM.Length; i++)
                 {
+<<<<<<< HEAD
                     this.STM[i] = new SynchronousTransportModule(3);// TUTAJ DODAC JESZCZE PARAMETR Z XMLA
+=======
+                    this.STM[i] = new SynchronousTransportModule(Constants.STM_CAPACITY);// TUTAJ DODAC JESZCZE PARAMETR Z XMLA
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
                 }
 
                 startSending();
@@ -346,6 +386,15 @@ namespace NetworkNode
         }
         private void addLog(Grid log, string message, int logType)
         {
+            List<string> a = new List<string>();
+            for (int i = 0; i < message.Length; i += 40)
+            {
+                if ((i + 40) < message.Length)
+                    a.Add(message.Substring(i, 40));
+                else
+                    a.Add(message.Substring(i));
+            }
+
             var color = Brushes.Black;
 
             switch(logType){
@@ -362,11 +411,14 @@ namespace NetworkNode
                      new Action(() =>
                      {
                          var t = new TextBlock();
-                         t.Text = ("[" + DateTime.Now.ToString("HH:mm:ss") + "]  " +
-                             message + Environment.NewLine);
+                         t.Text = ("[" + DateTime.Now.ToString("HH:mm:ss") + "]  "); 
+                         foreach(string str in a){    
+                         t.Text+="     "+str + Environment.NewLine;
+                         }
+
                          t.Foreground = color;
                          RowDefinition gridRow = new RowDefinition();
-                         gridRow.Height = new GridLength(15);
+                         gridRow.Height = new GridLength(a.Count*15);
                          log.RowDefinitions.Add(gridRow);
                          Grid.SetRow(t, messageNumber);
                          messageNumber++;

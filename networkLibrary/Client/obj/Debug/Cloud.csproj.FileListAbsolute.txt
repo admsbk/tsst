@@ -177,6 +177,7 @@ E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_k
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.g.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.Properties.Resources.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\networkLibrary\Client\bin\Debug\Client.exe.config
 C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.exe
 C:\Users\Marcin\Desktop\tsst\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.pdb
@@ -222,3 +223,5 @@ C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\C
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Client.g.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.Properties.Resources.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\networkLibrary\Client\obj\Debug\Cloud.csproj.GenerateResource.Cache
+=======
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac

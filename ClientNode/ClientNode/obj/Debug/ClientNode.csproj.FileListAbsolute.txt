@@ -102,6 +102,7 @@ E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_k
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
 E:\Users\rawks_000\Documents\Visual Studio 2013\Projects\stary rilis\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\ClientNode\ClientNode\bin\Debug\ClientNode.exe.config
 E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.exe
 E:\Users\rawks_000\Downloads\tsst\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.pdb
@@ -120,3 +121,5 @@ C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\Clien
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.g.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.Properties.Resources.resources
 C:\Users\Maciej\Desktop\dyskretni_koderzy (1)\dyskretni_koderzy\ClientNode\ClientNode\obj\Debug\ClientNode.csproj.GenerateResource.Cache
+=======
+>>>>>>> 10ae7036948c3f9ffb9df1f3a03fce21780a3fac
